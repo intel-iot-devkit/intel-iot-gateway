@@ -132,6 +132,10 @@ appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
 
+```json
+[{"id":"d717de8d.28e82","type":"bean","name":"Bean","uuid":"","connectiontype":"timeout","connectiontimeout":"60"},{"id":"580e0319.a7f1fc","type":"bean temp","name":"","bean":"d717de8d.28e82","x":390,"y":231,"z":"4cb39d5b.b34c64","wires":[["b1895c9e.4e76a"]]},{"id":"b1895c9e.4e76a","type":"debug","name":"","active":true,"console":"false","complete":"payload","x":626,"y":231,"z":"4cb39d5b.b34c64","wires":[]},{"id":"e6b9cc13.19463","type":"inject","name":"","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":160,"y":231,"z":"4cb39d5b.b34c64","wires":[["580e0319.a7f1fc"]]}]
+```
+
 References
 ==========
 

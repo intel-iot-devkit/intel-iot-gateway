@@ -118,6 +118,10 @@ appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
 
+```json
+[{"id":"7bc6f0f3.84391","type":"serial-port","serialport":"/dev/ttyUSB0","serialbaud":"9600","databits":"8","parity":"none","stopbits":"1","newline":"\\n","bin":"false","out":"char","addchar":false},{"id":"b8d1dd75.472e2","type":"serial in","name":"RFID In","serial":"7bc6f0f3.84391","x":154,"y":376,"z":"d8bf240b.2740d8","wires":[["b9130dd8.46ecf"]]},{"id":"b9130dd8.46ecf","type":"debug","name":"","active":true,"console":"false","complete":"false","x":380,"y":374,"z":"d8bf240b.2740d8","wires":[]}]
+```
+
 References
 ==========
 

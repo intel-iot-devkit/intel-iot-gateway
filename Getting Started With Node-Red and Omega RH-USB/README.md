@@ -157,6 +157,10 @@ appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
 
+```json
+[{"id":"f4321530.0bcde8","type":"serial-port","z":"9d03f5b9.62fc08","serialport":"/dev/ttyUSB0","serialbaud":"9600","databits":"8","parity":"none","stopbits":"1","newline":"\\n","bin":"false","out":"char","addchar":false},{"id":"7f80e374.807f1c","type":"serial in","z":"9d03f5b9.62fc08","name":"Sensor Input","serial":"f4321530.0bcde8","x":253,"y":229,"wires":[["bc8f30ff.4370d"]]},{"id":"bc8f30ff.4370d","type":"debug","z":"9d03f5b9.62fc08","name":"","active":true,"console":"false","complete":"true","x":489,"y":246,"wires":[]},{"id":"62a0948b.9d5f6c","type":"serial out","z":"9d03f5b9.62fc08","name":"Sensor Output","serial":"f4321530.0bcde8","x":613,"y":317,"wires":[]},{"id":"54a038a6.ab5fc8","type":"inject","z":"9d03f5b9.62fc08","name":"Send F","topic":"","payload":"F","payloadType":"string","repeat":"","crontab":"","once":false,"x":192,"y":324,"wires":[["e664133d.199bf"]]},{"id":"e664133d.199bf","type":"function","z":"9d03f5b9.62fc08","name":"Add Carriage Return","func":"msg.payload = msg.payload+\"\\r\"; \nreturn msg;","outputs":1,"noerr":0,"x":387,"y":325,"wires":[["62a0948b.9d5f6c"]]}]
+```
+
 References
 ==========
 

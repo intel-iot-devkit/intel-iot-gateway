@@ -124,7 +124,9 @@ appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
 
-> ![JSON](images/ti-json.png)
+```json
+[{"id":"f80454e.f07fba8","type":"sensorTag","name":"sensorTag","topic":"sensorTag","uuid":"","temperature":true,"humidity":true,"pressure":true,"magnetometer":true,"accelerometer":true,"gyroscope":true,"keys":true,"luxometer":true,"x":240,"y":266,"z":"ec8b1eb.f1374e","wires":[["ad11b15b.52ee5"]]},{"id":"ad11b15b.52ee5","type":"debug","name":"","active":true,"console":"false","complete":"payload","x":543,"y":276,"z":"ec8b1eb.f1374e","wires":[]}]
+```
 
 References
 ==========

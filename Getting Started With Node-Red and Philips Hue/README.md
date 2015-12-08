@@ -116,13 +116,13 @@ return msg;
 
     -   The Hue Go light should come on and turn Green
 
-        Congratulations! You are successfully communicating via IP to
-        the Philips Hue Bridge, which is then communicating via ZigBee
-        to the Philips Hue light. You can repeat this process to create
-        other colors, setting the rgb value in the function node to any
-        color combination you want. You can also use the Hue Pull node,
-        along with a Debug node, to read the current setting/value of a
-        Hue device.
+Congratulations! You are successfully communicating via IP to
+the Philips Hue Bridge, which is then communicating via ZigBee
+to the Philips Hue light. You can repeat this process to create
+other colors, setting the rgb value in the function node to any
+color combination you want. You can also use the Hue Pull node,
+along with a Debug node, to read the current setting/value of a
+Hue device.
 
 Example flow
 ============
@@ -133,6 +133,10 @@ the same nodes and configuration we created manually will automatically
 appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
+
+```json
+[{"id":"e2ca30d6.1d35d","type":"Hue Set","deviceid":"1","serverid":"001788fffe210097","name":"Hue Go","x":585,"y":151,"z":"3685261d.c97ada","wires":[[],[]]},{"id":"bdcb7d46.42348","type":"function","name":"Red","func":"msg.payload={\n\t\t\t\"on\":[true],\n\t\t\t\"transitiontime\":[5],\n\t\t\t\"bri\":[100],\n\t\t\t\"rgb\":[255,0,0]\n\t\t}\nreturn msg;","outputs":1,"noerr":0,"x":352,"y":116,"z":"3685261d.c97ada","wires":[["e2ca30d6.1d35d"]]},{"id":"4d9edd42.b26124","type":"inject","name":"","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":150,"y":102,"z":"3685261d.c97ada","wires":[["bdcb7d46.42348"]]},{"id":"ba3eeda6.45c11","type":"function","name":"Green","func":"msg.payload={\n\t\t\t\"on\":[true],\n\t\t\t\"transitiontime\":[5],\n\t\t\t\"bri\":[100],\n\t\t\t\"rgb\":[0,255,0]\n\t\t}\nreturn msg;","outputs":1,"noerr":0,"x":349,"y":181,"z":"3685261d.c97ada","wires":[["e2ca30d6.1d35d"]]},{"id":"37faeb17.c80514","type":"inject","name":"","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":156,"y":199,"z":"3685261d.c97ada","wires":[["ba3eeda6.45c11"]]}]
+```
 
 References
 ==========

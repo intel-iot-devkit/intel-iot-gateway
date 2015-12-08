@@ -108,7 +108,7 @@ Drag the following nodes from the left bar on to Sheet 1
 
 -   debug
 
-1^st^ we need to get the Z-Wave Node ID from the Smart Switch you added
+First, we need to get the Z-Wave Node ID from the Smart Switch you added
 in Setting up the Z-Wave Network section. Here’s how we can get that
 info.
 
@@ -206,6 +206,10 @@ the same nodes and configuration we created manually will automatically
 appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
+
+```json
+[{"id":"9d41a5d9.62be58","type":"zwave-controller","port":"/dev/ttyUSB0","driverattempts":"3","pollinterval":"500"},{"id":"49f6bc58.b60944","type":"zwave-in","name":"z-wave in","controller":"9d41a5d9.62be58","x":161,"y":205,"z":"71d5b1a3.8e2a5","wires":[["4d8a73fb.b2758c"]]},{"id":"2b05244c.d4fadc","type":"inject","name":"Light on","topic":"'switchOn'","payload":"{\"nodeid\":4}","payloadType":"string","repeat":"","crontab":"","once":false,"x":168,"y":64,"z":"71d5b1a3.8e2a5","wires":[["4067c55d.bf983c"]]},{"id":"ee7f0d6b.1180f","type":"inject","name":"Light Off","topic":"'switchOff'","payload":"{\"nodeid\":4}","payloadType":"string","repeat":"","crontab":"","once":false,"x":171,"y":126,"z":"71d5b1a3.8e2a5","wires":[["4067c55d.bf983c"]]},{"id":"4067c55d.bf983c","type":"zwave-out","name":"z-wave out","controller":"9d41a5d9.62be58","x":446,"y":91,"z":"71d5b1a3.8e2a5","wires":[]},{"id":"4d8a73fb.b2758c","type":"debug","name":"z-wave in debug","active":true,"console":"false","complete":"payload","x":396,"y":204,"z":"71d5b1a3.8e2a5","wires":[]}]
+```
 
 Supported Sensors
 =================
