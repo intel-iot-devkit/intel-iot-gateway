@@ -1,23 +1,7 @@
 Overview
 ========
 
--   Node-RED is a tool for wiring together hardware devices, APIs and
-    > online services in new and interesting ways. Node-RED provides a
-    > browser-based flow editor that makes it easy to wire together
-    > flows using the wide range nodes in the palette. Flows can be then
-    > deployed to the runtime in a single-click. The light-weight
-    > runtime is built on Node.js, taking full advantage of its
-    > event-driven, non-blocking model. This makes it ideal to run at
-    > the edge of the network. The multi-standard SensorTag, based on
-    > the SimpleLink ultra-low power CC2650 wireless MCU, supports
-    > development for Bluetooth Smart, 6LoWPAN and ZigBee. This
-    > SensorTag has a unique feature that allows developers to change
-    > between different 2.4 GHz technologies by simply loading new
-    > software images directly from the SensorTag app over-the-air. In
-    > this example, we’ll be communicating to the SensorTag via
-    > Bluetooth Low Energy (BLE). The SensorTag includes the following
-    > sensors: Infrared and Ambient Temperature, Ambient Light,
-    > Humidity, Barometric Pressure, 9-axis motion tracking, and Magnet.
+Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways. Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range nodes in the palette. Flows can be then deployed to the runtime in a single-click. The light-weight runtime is built on Node.js, taking full advantage of its event-driven, non-blocking model. This makes it ideal to run at the edge of the network. The multi-standard SensorTag, based on the SimpleLink ultra-low power CC2650 wireless MCU, supports development for Bluetooth Smart, 6LoWPAN and ZigBee. This SensorTag has a unique feature that allows developers to change between different 2.4 GHz technologies by simply loading new software images directly from the SensorTag app over-the-air. In this example, we’ll be communicating to the SensorTag via Bluetooth Low Energy (BLE). The SensorTag includes the following sensors: Infrared and Ambient Temperature, Ambient Light, Humidity, Barometric Pressure, 9-axis motion tracking, and Magnet.
 
 Required Hardware
 =================
@@ -26,7 +10,7 @@ Required Hardware
 
 -   TI SimpleLink Multi-Standard SensorTag Development Kit
 
-> ![](media/image1.png)
+> ![TI Sensor Tag](images/ti-sensortag.png)
 
 Assumptions
 ===========
@@ -55,7 +39,7 @@ console. You can access the console via <https://ipaddressofthegateway>.
 -   If it says “Disabled” next to Bluetooth Status, click on the
     Disabled button
 
-> It should look like this when setup correctly![](media/image2.png)
+> It should look like this when setup correctly![](images/ti-blesetupscreen.png)
 
 Bluetooth Test
 ==============
@@ -84,7 +68,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](media/image3.png)
+![](images/ti-nodescreen.png)
 
 Let’s create a node-red flow to get the sensor readings from the
 SensorTag.
@@ -105,7 +89,7 @@ Now, configure the nodes
     is only one in range. Leave the other fields as default. For
     example:
 
-> ![](media/image4.png)
+> ![](images/ti-sensornode.png)
 
 -   Click OK
 
@@ -114,7 +98,7 @@ Now, configure the nodes
     the small box on the left of the Debug node. It should look like
     this:
 
-> ![](media/image5.png)
+> ![](images/ti-sensorwire.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 
@@ -139,6 +123,8 @@ the same nodes and configuration we created manually will automatically
 appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
+
+> ![](images/ti-json.png)
 
 References
 ==========
