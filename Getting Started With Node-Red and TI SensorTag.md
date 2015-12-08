@@ -68,7 +68,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](images/ti-nodescreen.png)
+![Using Node-Red](images/ti-noderedscreen.png)
 
 Let’s create a node-red flow to get the sensor readings from the
 SensorTag.
@@ -89,7 +89,7 @@ Now, configure the nodes
     is only one in range. Leave the other fields as default. For
     example:
 
-> ![](images/ti-sensornode.png)
+> ![Sensor Node](images/ti-sensornode.png)
 
 -   Click OK
 
@@ -98,7 +98,7 @@ Now, configure the nodes
     the small box on the left of the Debug node. It should look like
     this:
 
-> ![](images/ti-sensorwire.png)
+> ![Wiring Up The Nodes](images/ti-sensorwire.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 
@@ -124,7 +124,7 @@ appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
 
-> ![](images/ti-json.png)
+> ![JSON](images/ti-json.png)
 
 References
 ==========
