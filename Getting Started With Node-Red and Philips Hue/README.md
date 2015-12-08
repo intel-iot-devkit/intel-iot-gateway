@@ -85,13 +85,16 @@ msg.payload = {
     "rgb":[0,255,0]
 }
 
-retu
+return msg;
+```
 
 -   Click on Ok
 
 -   Now wire 1 of the inject nodes to the Red function node by clicking
     and dragging between the small box on the right of the inject node
     to the small box on the left of the Red function node.
+
+<!-- -->
 
 -   Repeat the wire process connecting the other inject node to the
     Green function node
