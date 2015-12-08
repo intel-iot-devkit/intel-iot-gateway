@@ -21,7 +21,7 @@ Required Hardware
 
 -   USB Mini-B Cable
 
-> ![](media/image1.jpeg)
+> ![](images/image1.jpeg)
 
 Assumptions
 ===========
@@ -53,7 +53,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](media/image2.png)
+![](images/image2.png)
 
 Let’s create a node-red flow to get the badge readings from the RFID
 reader.
@@ -72,13 +72,13 @@ Now, configure the nodes
     Likely /dev/ttyUSB0. Set the Baud Rate to 9600. Leave the other
     fields as default. For example:
 
-> ![](media/image3.png)
+> ![](images/image3.png)
 
 -   Click on OK/Update
 
 -   Set the name to “RFID In”. For example:
 
-> ![](media/image4.png)
+> ![](images/image4.png)
 
 -   Click OK
 
@@ -86,7 +86,7 @@ Now, configure the nodes
     between the small box on the right of the RFID In node to the small
     box on the left of the Debug node. It should look like this:
 
-> ![](media/image5.png)
+> ![](images/image5.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 

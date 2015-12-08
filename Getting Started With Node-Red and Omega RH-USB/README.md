@@ -23,7 +23,7 @@ Required Hardware
 
 -   Omega RH-USB Sensor
 
-> ![](media/image1.png)
+> ![](images/image1.png)
 
 Assumptions
 ===========
@@ -53,7 +53,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](media/image2.png)
+![](images/image2.png)
 
 Let’s create a node-red flow to get the badge readings from the RH-USB
 reader.
@@ -76,7 +76,7 @@ Now, configure the nodes
     IoT Gateway. Likely /dev/ttyUSB0. Set the Baud Rate to 9600. Leave
     the other fields as default. For example:
 
-> ![](media/image3.png)
+> ![](images/image3.png)
 
 -   Click on OK/Update
 
@@ -93,9 +93,11 @@ Now, configure the nodes
 -   Double click on the function node. Set the name to “Add Carriage
     return” and paste to following text in to the function body:
 
-> msg.payload = msg.payload+"\\r"; 
->
-> return msg;
+```javascript
+msg.payload = msg.payload+"\r"; 
+
+return msg;
+```
 
 -   Click on Ok.
 
@@ -103,13 +105,13 @@ Now, configure the nodes
     dragging between the small box on the right of the RH-USB In to the
     small box on the left of the Debug node. It should look like this:
 
-> ![](media/image4.png)
+> ![](images/image4.png)
 
 -   Now wire the Send F inject node to the Add Carriage return function
     node and the Add Carriage return function node to the RH-USB Out
     serial node. It should look like this:
 
-> ![](media/image5.png)
+> ![](images/image5.png)
 
 -   Click on the Deploy button; top right.
 
@@ -124,7 +126,7 @@ Now, configure the nodes
     -   You should see the current temperature in Fahrenheit returned in
         the debug tab. It should look like this:
 
-    -   ![](media/image6.png)
+    -   ![](images/image6.png)
 
 -   In addition to sending an F to request temperature in Fahrenheit,
     you can also send the following commands. Try experimenting changing

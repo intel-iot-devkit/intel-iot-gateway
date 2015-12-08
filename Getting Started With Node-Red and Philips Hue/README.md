@@ -1,18 +1,7 @@
 Overview
 ========
 
--   Node-RED is a tool for wiring together hardware devices, APIs and
-    > online services in new and interesting ways. Node-RED provides a
-    > browser-based flow editor that makes it easy to wire together
-    > flows using the wide range nodes in the palette. Flows can be then
-    > deployed to the runtime in a single-click. The light-weight
-    > runtime is built on Node.js, taking full advantage of its
-    > event-driven, non-blocking model. This makes it ideal to run at
-    > the edge of the network. Hue is Personal Wireless Lighting System
-    > from Philips. It is designed for home use and a minimum
-    > implementation includes a bridge (IP-ZigBee) and at least one LED.
-    > Most of Hue LED based lights support multi-color but pure white
-    > bulbs are available as well.
+Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways. Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range nodes in the palette. Flows can be then deployed to the runtime in a single-click. The light-weight runtime is built on Node.js, taking full advantage of its event-driven, non-blocking model. This makes it ideal to run at the edge of the network. Hue is Personal Wireless Lighting System from Philips. It is designed for home use and a minimum implementation includes a bridge (IP-ZigBee) and at least one LED. Most of Hue LED based lights support multi-color but pure white bulbs are available as well.
 
 Required Hardware
 =================
@@ -23,7 +12,7 @@ Required Hardware
 
 -   Philips Hue bulb or light (Philips Hue Go was used in this example)
 
-> ![](media/image1.jpeg) ![](media/image2.jpeg)
+> ![](images/image1.jpeg) ![](images/image2.jpeg)
 
 Assumptions
 ===========
@@ -48,7 +37,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](media/image3.png)
+![](images/image3.png)
 
 Let’s create a node-red flow to turn on a Hue light and set the color.
 
@@ -72,38 +61,31 @@ Now, configure the nodes
 -   Double click on the function node. Set the name to “Red” and insert
     the following syntax:
 
-> msg.payload={
->
-> "on":\[true\],
->
-> "transitiontime":\[5\],
->
-> "bri":\[100\],
->
-> "rgb":\[255,0,0\]
->
-> }
->
-> return msg;
+```javascript
+msg.payload = {
+    "on" : [true],
+    "transitiontime" : [5],
+    "bri" : [100],
+    "rgb":[255,0,0]
+}
+
+return msg;
+```
 
 -   Click on Ok
 
 -   Double click on the other function node. Set the name to “Gree” and
     insert the following syntax:
 
-> msg.payload={
->
-> "on":\[true\],
->
-> "transitiontime":\[5\],
->
-> "bri":\[100\],
->
-> "rgb":\[0,255,0\]
->
-> }
->
-> return msg;
+```javascript
+msg.payload = {
+    "on" : [true],
+    "transitiontime" : [5],
+    "bri" : [100],
+    "rgb":[0,255,0]
+}
+
+retu
 
 -   Click on Ok
 
@@ -111,15 +93,13 @@ Now, configure the nodes
     and dragging between the small box on the right of the inject node
     to the small box on the left of the Red function node.
 
-<!-- -->
-
 -   Repeat the wire process connecting the other inject node to the
     Green function node
 
 -   Lastly, wire both Red and Green function nodes to the Hue Set node
     that we named Hue Go. It should look like this:
 
-> ![](media/image4.png)
+> ![](images/image4.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 

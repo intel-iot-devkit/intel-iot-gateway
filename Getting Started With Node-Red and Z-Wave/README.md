@@ -25,7 +25,7 @@ Required Hardware
     -   *In this example, we used an Aeon Labs DSA02203-ZWUS Z-Wave
         Z-Stick Series 2*
 
-> ![](media/image1.jpeg)
+> ![](images/image1.jpeg)
 
 -   At least one Z-Wave device
 
@@ -33,7 +33,7 @@ Required Hardware
         start for initial testing. *In this example, we used a GE
         Plug-in Smart Switch model 12719.*
 
-> ![](media/image2.jpeg)
+> ![](images/image2.jpeg)
 
 Assumptions
 ===========
@@ -96,7 +96,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](media/image3.png)
+![](images/image3.png)
 
 Drag the following nodes from the left bar on to Sheet 1
 
@@ -128,7 +128,7 @@ info.
 
 -   It should look like this:
 
-> ![](media/image4.png)
+> ![](images/image4.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy. It’s ok
     some of the nodes are not setup yet. We’ll get to those next.
@@ -142,7 +142,7 @@ info.
     toggle on/off. A debug message like this should appear each time you
     toggle the Smart Switch.
 
-> ![](media/image5.png)
+> ![](images/image5.png)
 
 -   Note the numeric value listed after “nodeid”. In this case, it’s 4.
 
@@ -151,7 +151,7 @@ Z-Wave Smart Switch
 
 -   Double click on one of the inject nodes. Set the fields as follows:
 
-> ![](media/image6.png)\
+> ![](images/image6.png)\
 > *Replace the nodeid numeric value with the value of your z-wave switch
 > as you noted above*
 
@@ -159,7 +159,7 @@ Z-Wave Smart Switch
 
 -   Double click on the other inject node. Set the fields as follows:
 
-> ![](media/image7.png)\
+> ![](images/image7.png)\
 > *Replace the nodeid numeric value with the value of your z-wave switch
 > as you noted above*
 
@@ -176,7 +176,7 @@ Z-Wave Smart Switch
     node to the small box on the left of the “z-wave out” node.
 
 -   It should look like this:\
-    ![](media/image8.png)
+    ![](images/image8.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy
 
@@ -195,7 +195,7 @@ Z-Wave Smart Switch
 
         Your two flows together should look like this:
 
-        ![](media/image9.png)
+        ![](images/image9.png)
 
 Example flow
 ============

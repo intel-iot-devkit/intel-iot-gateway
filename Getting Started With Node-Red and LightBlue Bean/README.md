@@ -1,18 +1,7 @@
 Overview
 ========
 
--   Node-RED is a tool for wiring together hardware devices, APIs and
-    > online services in new and interesting ways. Node-RED provides a
-    > browser-based flow editor that makes it easy to wire together
-    > flows using the wide range nodes in the palette. Flows can be then
-    > deployed to the runtime in a single-click. The light-weight
-    > runtime is built on Node.js, taking full advantage of its
-    > event-driven, non-blocking model. This makes it ideal to run at
-    > the edge of the network. The LightBlue Bean is a low energy
-    > Bluetooth Arduino microcontroller. Using Bluetooth 4.0, it is
-    > programmed wirelessly, runs on a coin cell battery, and comes with
-    > Temperature and 3-axis accelerometer sensors onboard, multi-color
-    > LED, and 6 digital I/O pins, 2 analog pins.
+Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways. Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range nodes in the palette. Flows can be then deployed to the runtime in a single-click. The light-weight runtime is built on Node.js, taking full advantage of its event-driven, non-blocking model. This makes it ideal to run at the edge of the network. The LightBlue Bean is a low energy Bluetooth Arduino microcontroller. Using Bluetooth 4.0, it is programmed wirelessly, runs on a coin cell battery, and comes with Temperature and 3-axis accelerometer sensors onboard, multi-color LED, and 6 digital I/O pins, 2 analog pins.
 
 Required Hardware
 =================
@@ -21,7 +10,7 @@ Required Hardware
 
 -   LightBlue Bean
 
-> ![](media/image1.png)
+> ![](images/image1.png)
 
 Assumptions
 ===========
@@ -50,7 +39,7 @@ console. You can access the console via <https://ipaddressofthegateway>.
 -   If it says “Disabled” next to Bluetooth Status, click on the
     Disabled button
 
-> It should look like this when setup correctly![](media/image2.png)
+> It should look like this when setup correctly![](images/image2.png)
 
 Bluetooth Test
 ==============
@@ -75,7 +64,7 @@ The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](media/image3.png)
+![](images/image3.png)
 
 Let’s create a node-red flow to get the current temperature from the
 Bean.
@@ -96,7 +85,7 @@ Now, configure the nodes
     you want to talk to. For this example, we’ll assume there is only
     one in range. Leave the other fields as default. For example:
 
-> ![](media/image4.png)
+> ![](images/image4.png)
 
 -   Click on Add and then OK
 
@@ -110,7 +99,7 @@ Now, configure the nodes
 
 -   It should look like this:
 
-> ![](media/image5.png)
+> ![](images/image5.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 
