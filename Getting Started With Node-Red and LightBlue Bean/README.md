@@ -22,6 +22,8 @@ Assumptions
 
 -   Node-red node node-red-contrib-bean is installed on the Intel IoT
     Gateway
+	
+	- You can install this package from the Package Repository in the Dev Hub web interface
 
 -   Node-Red is installed on the Intel IoT Gateway and is running
 
