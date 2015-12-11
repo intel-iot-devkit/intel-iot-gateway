@@ -15,27 +15,30 @@ Required Hardware
 Assumptions
 ===========
 
--   Intel Internet of Things Gateway is running the WindRiver
-    Intelligent Device Platform (IDP) version 3.0 or above
+-   Intel Internet of Things Gateway is running version 3.1 or above
 
--   Node.js is installed on the Intel IoT Gateway
+-   Node.js is installed on the Intel IoT Gateway (installed by default)
 
 -   Node-red node node-red-contrib-bean is installed on the Intel IoT
     Gateway
 	
-	- You can install this package from the Package Repository in the Dev Hub web interface
+	- You can install this package by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface
 
--   Node-Red is installed on the Intel IoT Gateway and is running
+-   Node-Red is installed on the Intel IoT Gateway and is running (installed by default)
 
 Enabling Bluetooth Low Energy (BLE) on the Intel IoT Gateway
 ============================================================
 
 By default, Bluetooth is enabled but Bluetooth Low Energy (BLE) is not.
 This is easy to turn off via the Intel IoT Gateway administrative web
-console. You can access the console via <https://ipaddressofthegateway>.
+console. You can access the console via <http://ipaddressofthegateway>.
 
 -   Log in using your root username and password
 
+-   Click on the Administration icon and then the Lunch button under LuCI to launch the gateway administration console.
+
+-   Log in using your root username and password.
+ 
 -   Select Network from the menu and choose Bluetooth
 
 -   If it says “Disabled” next to Bluetooth Status, click on the

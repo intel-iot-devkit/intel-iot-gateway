@@ -26,15 +26,14 @@ Required Hardware
 Assumptions
 ===========
 
--   Intel Internet of Things Gateway is running the WindRiver
-    Intelligent Device Platform (IDP) version 3.0 or above
+-   Intel Internet of Things Gateway is running version 3.1 or above
 
--   Node.js is installed on the Intel IoT Gateway
+-   Node.js is installed on the Intel IoT Gateway (installed by default)
 
 -   Node-red node node-red-node-serialport is installed on the Intel IoT
-    Gateway
+    Gateway (installed by default)
 
--   Node-Red is installed on the Intel IoT Gateway and is running
+-   Node-Red is installed on the Intel IoT Gateway and is running (installed by default)
 
 Connecting the RFID Reader
 ==========================

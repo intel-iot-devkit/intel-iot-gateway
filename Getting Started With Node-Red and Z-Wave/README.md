@@ -38,23 +38,22 @@ Required Hardware
 Assumptions
 ===========
 
--   Intel Internet of Things Gateway is running the WindRiver
-    Intelligent Device Platform (IDP) version 3.0 or above
+-   Intel Internet of Things Gateway is running version 3.1 or above
+
+-   Node.js is installed on the Intel IoT Gateway (installed by default)
 
 -   Z-Wave controller is plugged in to a USB port on the Intel IoT
     Gateway
 
--   Node.js is installed on the Intel IoT Gateway
+-	Z-Wave package is installed from the Intel IoT Gateway Developer Hub Interface.  You can install these packages by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface.  The Z-Wave package includes:
 
--   OpenZWave library and headers are installed on the Intel IoT Gateway
+	-   OpenZWave library and headers
 
--   Node.js add-on node-openzwave-shared is installed on the Intel IoT
-    Gateway
+	-   Node.js add-on node-openzwave-shared
 
--   Node-red node node-red-contrib-openzwave is installed on the Intel
-    IoT Gateway
+	-   Node-red node node-red-contrib-openzwave 
 
--   Node-Red is installed on the Intel IoT Gateway and is running
+-   Node-Red is installed on the Intel IoT Gateway and is running (installed by default)
 
 Setting up a Z-Wave Network
 ===========================

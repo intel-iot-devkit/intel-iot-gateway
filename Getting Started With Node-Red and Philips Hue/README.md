@@ -17,15 +17,16 @@ Required Hardware
 Assumptions
 ===========
 
--   Intel Internet of Things Gateway is running the WindRiver
-    Intelligent Device Platform (IDP) version 3.0 or above
+-   Intel Internet of Things Gateway is running version 3.1 or above
 
--   Node.js is installed on the Intel IoT Gateway
+-   Node.js is installed on the Intel IoT Gateway (installed by default)
 
 -   Node-red node node-red-contrib-hue is installed on the Intel IoT
     Gateway
 
--   Node-Red is installed on the Intel IoT Gateway and is running
+	- You can install this package by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface
+
+-   Node-Red is installed on the Intel IoT Gateway and is running (installed by default)
 
 -   The Philips Hue bridge has been setup and at least one light has
     been added
