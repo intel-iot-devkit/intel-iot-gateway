@@ -33,9 +33,7 @@ Assumptions
 -   Node.js is installed on the Intel IoT Gateway (installed by default)
 
 -   Node-red node node-red-node-serialport is installed on the Intel IoT
-    Gateway
-
-	- You can install this package by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface
+    Gateway (installed by default)
 
 -   Node-Red is installed on the Intel IoT Gateway and is running (installed by default)
 
@@ -56,8 +54,7 @@ something like this.
 
 ![](images/image2.png)
 
-Let’s create a node-red flow to get the badge readings from the RH-USB
-reader.
+Let’s create a node-red flow to get the temperature reading from the RH-USB sensor.
 
 Drag the following nodes from the left bar on to Sheet 1
 
