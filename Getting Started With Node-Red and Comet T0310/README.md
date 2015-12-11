@@ -45,7 +45,7 @@ From the console, log in and enter these commands:
 -	systemctl disable serial-getty@ttyS0
 -	systemctl stop serial-getty@ttyS0
 
-Installing sample code to read temperate
+Installing sample code to read temperature
 ========================================
 Copy the readtempfromcomet.c from this github to the /home/gwuser folder on the Intel IoT Gateway.
 The code assumes the sensor is plugged in to serial port1 (/dev/ttyS0).  If not, edit the source and change line 13 accordingly.
