@@ -47,15 +47,19 @@ From the console, log in and enter these commands:
 
 Installing sample code to read temperature
 ========================================
-Copy the readtempfromcomet.c from this github to the /home/gwuser folder on the Intel IoT Gateway.
+Copy the source file (readtempfromcomet.c)[https://github.com/intel-iot-devkit/Intel-IoT-Gateway/blob/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/src/readtempfromcomet.c] from this GitHub repo to the /home/gwuser folder on the Intel IoT Gateway.
 The code assumes the sensor is plugged in to serial port1 (/dev/ttyS0).  If not, edit the source and change line 13 accordingly.
 To compile, enter: 
 
+```bash
 gcc readtempfromcomet.c –o readtempfromcomet –lmodbus
+```
 
 To test the complied code, execute as follows:
 
+```bash
 ./readtempfromcomet
+```
 
 You should get back a 3 digit number, like 733.  That's the current temperate in Fahrenheit without the decimal point.
 
