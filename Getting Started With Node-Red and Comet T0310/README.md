@@ -47,6 +47,60 @@ From the console, log in and enter these commands:
 
 Installing sample code to read temperature
 ========================================
+
+Below is the source code for reading from the Comet sensor [readtempfromcomet.c](https://github.com/intel-iot-devkit/Intel-IoT-Gateway/blob/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/src/readtempfromcomet.c):
+
+```C
+#include <stdio.h>
+#include <errno.h>
+ 
+#include </usr/include/modbus/modbus.h>
+ 
+int main() 
+{
+ 
+    modbus_t *mb;
+    uint16_t tab_reg[32];
+    int rc;
+ 
+    mb = modbus_new_rtu("/dev/ttyS0", 9600, 'N', 8, 1);
+    if (mb == NULL) {
+	fprintf(stderr, "Unable to create the libmodbus context\n");
+	return -1;
+    }
+
+	//modbus_set_debug(mb, TRUE); 
+
+    rc = modbus_set_slave(mb, 1);
+    if (rc != 0) {
+        fprintf(stderr, "set slave failed: %s\n", modbus_strerror(errno));
+        modbus_free(mb);
+        return -1;
+    }
+
+    modbus_rtu_set_serial_mode(mb, MODBUS_RTU_RS232);
+    rc = modbus_connect(mb);
+    if (rc != 0) {
+        fprintf(stderr, "Connection failed: %s\n", modbus_strerror(errno));
+        modbus_free(mb);
+        return -1;
+    }
+
+    rc = modbus_read_registers(mb, 0x030, 1, tab_reg);
+    if (rc == -1) {
+        fprintf(stderr, "write failed: %d %s\n", errno, modbus_strerror(errno));
+        modbus_free(mb);
+        return -1;
+    }
+    printf("%d\n", tab_reg[0]);
+
+    modbus_close(mb);
+    modbus_free(mb);
+
+    return 0;
+}
+```
+
 Copy the source file [readtempfromcomet.c](https://github.com/intel-iot-devkit/Intel-IoT-Gateway/blob/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/src/readtempfromcomet.c) from this GitHub repo to the /home/gwuser folder on the Intel IoT Gateway.
 The code assumes the sensor is plugged in to serial port1 (/dev/ttyS0).  If not, edit the source and change line 13 accordingly.
 To compile, enter: 
