@@ -1,57 +1,54 @@
-#### 
-#### README.MD
+# Getting Started with Node-Red and Bluemix #
+<cr>
 
-	This document describes the steps to set up a Bluemix cloud connection to an Intel IoT gateway.
+## Overview ##
+
+This document describes the steps to set up a Bluemix cloud connection to an Intel IoT gateway.
 	
-	Note: this solution based on the existed solution: https://developer.ibm.com/recipes/tutorials/connect-an-intel-iot-gateway-to-iot-foundation/
+Note: this solution based on the existed solution: https://developer.ibm.com/recipes/tutorials/connect-an-intel-iot-gateway-to-iot-foundation.
 	
-	ver 1.1  - 12/09/2015 - nnm
-	Update README to changes in the release package
-	
-	ver 1.0  - 11/23/2015 - nnm
-	Release
-	
-##### IMPORTANT NOTES
+## IMPORTANT NOTES ##
 	
 * The Bluemix-solution currently does not support proxy (run behind firewall).  All steps below must be executed on  
   a gateway not behind firewall.
   
-##### SETUP
+## Required Hardware ##
 
-* First, on the target, create a folder called 'bluemix-solution', under /home/gwuser 
+-   Intel Internet of Things Gateway
 
-* download the zip file from the 'developer.ibm.com' link above and copy the zip to the target /home/gwuser
 
-	$ scp ibm-iot-quickstart.zip root@<gw-ip-addr>:/home/gwuser/
-	
-* unzip the zip file to bluemix-solution
-	
-	$ cd /home/gwuser
-	
-	$ unzip ibm-iot-quickstart.zip -d /home/gwuser/bluemix-solution	
-	
-##### RUN APP
-	
-* run the ibm-iot-quickstart app
-	- This python app reports the CPU utilization as a MQTT topic to the MQTT broker
-	
-	$ cd bluemix-solution/samples
-	$ python ibm-iot-quickstart.py
+## Assumptions ##
 
-	```
-	client.py ibm-iot-quickstart.py
-	root@WR-IntelligentDevice:/home/gwuser/bluemix-solution/samples# python ibm-iot-quickstart.py 
-	No config file found, connecting to the Quickstart service
-	MAC address: 000bab8b0a86
-	0.0
-	message published
-	87.7922077922
-	message published
-	88.3376849434
-	message published
 
-	```
-	leave it running or press Ctrl+C to terminate the app 
+-   Intel Internet of Things Gateway is running version 3.1 or above
+
+-   Node.js is installed on the Intel IoT Gateway (installed by default)
+
+-   The Bluemix package is installed on the Intel IoT Gateway
+	- You can install this package by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface
+
+-   Node-Red is installed on the Intel IoT Gateway and is running (installed by default)
+
+
+## Testing the bluemix script ##
+	
+-	Note: Currently, this example has only been tested with direct internet connections.  Ensure your gateway is conneted directly to the internet.  No proxy support.
+-	Log on to the Intel IoT Gateway	
+-	cd /home/gwuser/bluemix-solution
+-	Run the ibm-iot-quickstart app.  This python app reports the CPU utilization as a MQTT topic to the MQTT broker
+	-	python ibm-iot-quickstart.py
+-	You should see output like this
+    
+No config file found, connecting to the Quickstart service
+MAC address: 000bab8b0a86
+0.0
+message published
+87.7922077922
+message published
+88.3376849434
+message published
+
+-	Press Ctrl+C to terminate the app 
 
 * Run node-RED app
 
