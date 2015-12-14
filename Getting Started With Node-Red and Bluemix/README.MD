@@ -38,33 +38,34 @@ Note: this solution based on the existed solution: https://developer.ibm.com/rec
 -	Run the ibm-iot-quickstart app.  This python app reports the CPU utilization as a MQTT topic to the MQTT broker
 	-	python ibm-iot-quickstart.py
 -	You should see output like this
-    
-No config file found, connecting to the Quickstart service
-MAC address: 000bab8b0a86
-0.0
-message published
-87.7922077922
-message published
-88.3376849434
-message published
+
+```
+
+	No config file found, connecting to the Quickstart service
+	MAC address: 000bab8b0a86
+	0.0
+	message published
+	87.7922077922
+	message published
+	88.3376849434
+	message published
+
+```
 
 -	Press Ctrl+C to terminate the app 
 
-* Run node-RED app
+## Run node-RED example flow ##
 
-	$ ./node-red
-	
-	- Open a web browser @ http://<gw-ipaddr>:1880
-	- Import the 'node-RED-Bluemix-Flow.txt
-	- Deploy the flow, and click on the 'Run once' injector node to start the Bluemix flow.
+- Open a web browser @ http://<gw-ipaddr>:1880
+- Import the 'node-RED-Bluemix-Flow.txt from the library 
+- Deploy the flow, and click on the 'Run once' injector node to start the Bluemix flow.
    	
-	  note: no error indicates that the flow is running	
+Note: No error indicates that the flow is running.  There will be no other output in node-red.  No debug output.
 
-##### DATA VISUALIZATION
+## Data Visualization ##
+Here's how you can see the data that is being sent from the Intel IoT Gateway to the Bluemix cloud
 
-* Open a browser @QuickStart and enter the device MAC address to see the MQTT bluemix-solution topic
-	- open 'https://quickstart.internetofthings.ibmcloud.com'
-	- Enter the MAC address report previously  - click 'Go'
-	- The page will display the chart of the gateway CPU utilization over time.	
-
-##### eof
+- Go to 'https://quickstart.internetofthings.ibmcloud.com' with a web browser
+- Enter the MAC address of your Intel IoT Gateway's internet connection
+- Click 'Go'
+- The page will display the chart of the gateway CPU utilization over time.
