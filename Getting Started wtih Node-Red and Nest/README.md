@@ -14,9 +14,9 @@ heating and cooling bills. And if you want remote control, just use your smartph
 
 ## Required Hardware ##
 
--   Intel Internet of Things Gateway
+- Intel Internet of Things Gateway
 
--   Nest Thermostat and optionally Nest Protect
+- Nest Thermostat and optionally Nest Protect
 
 
 > ![](images/image1.png)
@@ -24,40 +24,39 @@ heating and cooling bills. And if you want remote control, just use your smartph
 
 ## Assumptions ##
 
--   Intel Internet of Things Gateway is running version 3.1 or above
+- Intel Internet of Things Gateway is running version 3.1 or above
 
--   Node.js is installed on the Intel IoT Gateway (installed by default)
+- Node.js is installed on the Intel IoT Gateway (installed by default)
 
--   Node-red node node-red-contrib-nest is installed on the Intel IoT
-    Gateway
-	- You can install this package by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface
+- Node-red node node-red-contrib-nest is installed on the Intel IoT Gateway
+- You can install this package by clicking on Packages and then Add Packages from the Intel IoT Gateway Developer Hub interface
 	
--   Node-Red is installed on the Intel IoT Gateway and is running(installed by default)
+- Node-Red is installed on the Intel IoT Gateway and is running(installed by default)
 -   Nest products (Thermostat(s) and or Protect(s) are installed, functioning, and are connected to a Nest cloud account
 
-Nest Developer Account Setup
-==========================
+## Nest Developer Account Setup ##
 
 You will need a Nest Developer Program account account to query your the Nest cloud for your Nest data.  
 
 Create a [Nest developer portal](https://developer.nest.com/) account and log in.
 
-Create a "Client Product"
+Click on "Create a Cloud Product"
 
 - Give your product a unique name
-- Choose which types of data you wish to make available for read and/or write (i.e. Thermostat, Away, Smoke+CO Alarm)
-- Set the permissions to read/write accordingly.
-- Set the Categories to Home Automation and Building for example.
-- Set the users to Individual.
-- The Support URL is a required field but not needed for this example.  Set it to something appropriate for you.
+- Enter a description
+- Set the Categories to Home Automation and Building for example
+- Set the users to Individual
+- The Support URL is a required field but not needed for this example.  Set it to something appropriate for you
 - Leave the Redirect URI blank to enable the PIN CODE authentication process
+- Check the boxes in the Permissions section for Thermostat, Away,  and Smoke_CO Alarm (if you have a Nest Protect).
+	- Within each area, enter a brief description of the permission.  This text shows up when you authenticate an application to the service.  This doesn't matter for the tutorial.
+	- Optionally, within each area, change to read/write if you want to be able to change settings from within node-red (not part of this tutorial)
 - Click on Create Product
+- Your new Product will now be listed.  Click on it to see the details
+- Keep the web page open as you'll need the Product ID, Product Secret, Authorization URL, and Access Token URL information later.
 
-Keep the web page open as you'll need the Product ID, Product Secret, Authorization URL, and Access Token URL information later.
 
-
-Using Node-Red
-==============
+## Using Node-Red ##
 
 The Node-Red browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
@@ -65,61 +64,111 @@ something like this.
 
 ![](images/image2.png)
 
-Let’s create a node-red flow to get the badge readings from the RFID
-reader.
+Let’s create a node-red flow to get the readings from the Nest product(s).
 
 Drag the following nodes from the left bar on to Sheet 1
 
--   Serial input
-
--   debug
+- inject
+- nest request
+- function
+- debug
+- mqtt
 
 Now, configure the nodes
 
--   Double click on the serial node. Click on the pen icon to add a new
-    serial port. In the Serial Port field, enter the device you noted
-    above when you plugged the RFID reader in to the Intel IoT Gateway.
-    Likely /dev/ttyUSB0. Set the Baud Rate to 9600. Leave the other
-    fields as default. For example:
+**nest request node**
+
+- Double click on the nest request node.
+- Click on the pen icon to add a new account.
+- Cut and paste the Product ID from the Nest Developer web page you left open above in to the Client ID field
+- Cut and paste the Product Secret from the Nest Developer web page to the Client Secret field
+- Click on the Authorize button.  A web page will launch and show you the Nest Product information you created in the Nest Developer web site.  Click on Accept.
+- Type the Pincode displayed in to the Pincode filed back in node-red node.
+- Click on the Generate Token button.  A token will be crated and the field will be automatically filled in.  
+- Click on Add
+- Ensure the Type is set to Thermostat(s)
+- Set the Name field to "Nest Temp"
+- Click on Ok
+
+**function node**
+
+- Double click on the function node
+- Set the name to temp only
+- Copy and Paste this code in to the function body.  This function will get just the temperature value from the first thermostat that comes back in the set of data retrieved from the Nest cloud.
+	- Note: If you have a 2nd Nest, you can change the output value in the function to 2.  The temperature of the 1st thermostat reported by the Nest cloud will go to output 1 and the temperature of the 2nd thermostat will go to output 2
+
+```
+
+	//var obj = JSON.parse(msg.payload);
+	var obj = msg.payload;
+	var messages = [];
+
+	// .ambient_temperature_f
+	for(var key in obj)
+	{
+	    if (obj.hasOwnProperty(key))
+	    {
+	        messages.push({payload: obj[key].ambient_temperature_f});
+	    }
+	}
+
+return messages;
+
+```
+
+- Now wire the inject node to the Nest Temp node by clicking and dragging between the small box on the right of the inject In node to the small box on the left of the Nest Temp node. 
+- Repeat the process for to wire the Nest Temp node to the temp only function node and again to wire the temp only node to the debug node.
+	- Note: If you have a 2nd thermostat, you can add a 2nd debug node and wire it to the 2nd output on the function node)
+
+- It should look like this:
+
 
 > ![](images/image3.png)
 
--   Click on OK/Update
+- Click on the Deploy button, top right, and Confirm deploy.
 
--   Set the name to “RFID In”. For example:
+- Ensure the “debug” node is turned on. The box extending to the right of the node should be solid/filled in green.
+
+- Switch the column on the right from the Info tab to the debug tab.
+
+- Click on the blue box to the left of the inject node.
+
+- The current temperature should appear as part of the payload message  should appear as part of the payload message in the debug tab.
+
+**Congratulations! You are successfully communicating via IP/Cloud to the Nest Thermostat.**
+
+
+Now let's get visualize the Nest thermostat data to the Intel IoT Developer Hub
+
+- Add a chart node and a mqtt node to the sheet
+- Double click on the chart node and set the values as follows
+	- Title = Nest Temperature
+	- Type = Gauge
+	- Priority = 3 (placement of chart group across Dev Hub)
+	- Units = °F
+	- Range = 60 to 80
+	- Target = (blank)
+	- Points = 50
+	- Source = Nest Cloud
+	- TTL = 10
+	- Source Priority = 1 (placement of chart within chart group)
+	- Click on Ok
+- Double click on the mqtt node and set the values as follows
+	- Server = localhost:1833 (should already be selectable in the drop down)
+	- Topic = /sensors
+	- Click on Ok
+
+Now wire the output of the temp only function to the Nest Temperature chart node and the Net Temperate Chart node to the /sensors mqtt node.
+It should look like this.
 
 > ![](images/image4.png)
 
--   Click OK
+- Click on the Deploy button, top right.
+- Now view the Intel IoT Gateway Developer Hub via a web browser.  You should see a new sensor and graph called Nest Temperature.
 
--   Now wire the RFID In node to the Debug node by clicking and dragging
-    between the small box on the right of the RFID In node to the small
-    box on the left of the Debug node. It should look like this:
+**Congratulations! You are successfully displaying sensor data from your Nest on the Intel IoT Gateway Developer Hub.**
 
-> ![](images/image5.png)
-
--   Click on the Deploy button, top right, and Confirm deploy.
-
--   Ensure the “debug” node is turned on. The box extending to the right
-    of the node should be solid/filled in green.
-
--   Switch the column on the right from the Info tab to the debug tab.
-
--   Scan one of your badges.
-
-    -   The badge ID should appear as part of the payload message in the
-        debug tab.
-
--   Scan your other badge.
-
-    -   The badge ID should appear as part of the payload message in the
-        debug tab.
-
-        Congratulations! You are successfully communicating via Serial
-        to a RFID reader device.
-
-Example flow
-============
+## Example flow ##
 
 Node-Red supports exporting and importing of flows (into source json).
 Here is an export of the above two flows we created. If you import this,
@@ -128,19 +177,16 @@ appear on the selected Sheet. Import and Export can be found in the
 Node-Red menu by clicking on the 3 horizontal lines to the right of the
 Deploy button.
 
-```json
-[{"id":"7bc6f0f3.84391","type":"serial-port","serialport":"/dev/ttyUSB0","serialbaud":"9600","databits":"8","parity":"none","stopbits":"1","newline":"\\n","bin":"false","out":"char","addchar":false},{"id":"b8d1dd75.472e2","type":"serial in","name":"RFID In","serial":"7bc6f0f3.84391","x":154,"y":376,"z":"d8bf240b.2740d8","wires":[["b9130dd8.46ecf"]]},{"id":"b9130dd8.46ecf","type":"debug","name":"","active":true,"console":"false","complete":"false","x":380,"y":374,"z":"d8bf240b.2740d8","wires":[]}]
-```
 
-References
-==========
 
--   [Nest Thermostat](https://nest.com/)
+[{"id":"baabe7c7.455418","type":"mqtt-broker","z":"","broker":"localhost","port":"1883","clientid":"","usetls":false,"verifyservercert":true,"compatmode":true,"keepalive":"15","cleansession":true,"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":""},{"id":"8b99208b.7466e","type":"nest request","z":"69a52aa4.965ad4","account":"","devicetype":"thermostats","deviceid":"","streaming":"false","name":"Nest Temp","x":259,"y":538,"wires":[["a6bbb09c.59445"]]},{"id":"615eaec.f9ea15","type":"debug","z":"69a52aa4.965ad4","name":"","active":true,"console":"false","complete":"payload","x":615,"y":555,"wires":[]},{"id":"816e2d27.7e91d","type":"inject","z":"69a52aa4.965ad4","name":"","topic":"","payload":"","payloadType":"date","repeat":"5","crontab":"","once":true,"x":118,"y":495,"wires":[["8b99208b.7466e"]]},{"id":"a6bbb09c.59445","type":"function","z":"69a52aa4.965ad4","name":"temp only","func":"//var obj = JSON.parse(msg.payload);\nvar obj = msg.payload;\nvar messages = [];\n\n// .ambient_temperature_f\nfor(var key in obj)\n{\n    if (obj.hasOwnProperty(key))\n    {\n        messages.push({payload: obj[key].ambient_temperature_f});\n    }\n}\n\nreturn messages;","outputs":"2","noerr":0,"x":422,"y":575,"wires":[["615eaec.f9ea15","bcd1e393.432e2"],[]]},{"id":"7768cbc.f889734","type":"mqtt out","z":"69a52aa4.965ad4","name":"","topic":"/sensors","qos":"","retain":"","broker":"baabe7c7.455418","x":803,"y":562,"wires":[]},{"id":"bcd1e393.432e2","type":"chart tag","z":"69a52aa4.965ad4","title":"Nest Temperature","chartType":"gauge","dataSource":"Nest Cloud","units":"°F","min":"60","max":"80","targetLow":"68","targetHigh":"72","priority":"2","sourcePriority":"1","ttl":"5","points":50,"x":621,"y":500,"wires":[["7768cbc.f889734"]]}]
+
+## References ##
+
+- [Nest Thermostat](https://nest.com/)
    
 - [Nest Developer Portal](https://developer.nest.com/)
 
--   [node-red-contrib-nest](https://github.com/hjespers/node-red-contrib-nest)
+- [node-red-contrib-nest](https://github.com/hjespers/node-red-contrib-nest)
 
--   [Node-Red](http://nodered.org/)
-
-
+- [Node-Red](http://nodered.org/)

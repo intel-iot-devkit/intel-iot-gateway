@@ -105,13 +105,13 @@ Copy the source file [readtempfromcomet.c](https://github.com/intel-iot-devkit/I
 The code assumes the sensor is plugged in to serial port1 (/dev/ttyS0).  If not, edit the source and change line 13 accordingly.
 To compile, enter: 
 
-```bash
+```
 gcc readtempfromcomet.c –o readtempfromcomet –lmodbus
 ```
 
 To test the complied code, execute as follows:
 
-```bash
+```
 ./readtempfromcomet
 ```
 
