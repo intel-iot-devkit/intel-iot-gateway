@@ -16,15 +16,15 @@ Cloud Commander* is a web based file manager with console and editor. Using Clou
 ## Access Cloud Commander ##
 Cloud Commander is all web based and can be easily accessed via the Developer Hub.  To access the Developer Hub, open your web browser and go the <http://ipaddressofthegateway>. Log in with the username and & password.  Once connected, you should see something like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Cloud%20Commander/images/image1.png)
+![](images/image1.png)
 
 To access Cloud Commander, click on the Administration Icon.  You should see a screen like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Cloud%20Commander/images/image2.png)
+![](images/image2.png)
 
 Now click on the LAUNCH button under the Folder icon.  This will open Cloud Commander.  You should now see two sections showing the folder listing on your IoT gateway.  Below the folder listings are a row of buttons (you may need to scroll down). It will look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Cloud%20Commander/images/image3.png)
+![](images/image3.png)
 
 This is Cloud Commander.  From here you can navigate to any folder or file on your IoT gateway just by clicking on the folder name.  Here are the primary features of Cloud Commander. You can click on these buttons or press the corresponding function key
 
@@ -63,11 +63,11 @@ From Cloud Commander, click on the >_~ button to open a terminal session.  Enter
 
 Opps, it looks like there's an error with our code.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Cloud%20Commander/images/image4.png)
+![](images/image4.png)
 
 Close the terminal session by clicking the X in the top right of the window and from Cloud Commander click on the hello-world.py file and choose or click on the F4 button to edit the file.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Cloud%20Commander/images/image5.png)
+![](images/image5.png)
 
 Ah, it looks like there's a typo.  Remove the "x" after "print" and click on the X in the top right of the window to close the file and confirm that you want to save your changes.
 
@@ -76,7 +76,7 @@ Now let's try the application again.  From Cloud Commander, click on the >_~ but
 > cd /home/gwuser
 > python hellow-world.py
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Cloud%20Commander/images/image6.png)
+![](images/image6.png)
 
 Much better.  Now the application runs correctly.
 
