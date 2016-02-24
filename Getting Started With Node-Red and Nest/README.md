@@ -9,8 +9,8 @@ range nodes in the palette. Flows can be then deployed to the run-time in a sing
 - IoT Gateway that uses Intel® IoT Gateway Technology
 - Nest Thermostat and optionally Nest Protect
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Nest/images/image1.png)
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Nest/images/image1.5.png)
+![](image1.png)
+![](image1.5.png)
 
 ## Assumptions ##
 - Intel® IoT Gateway Technology version 3.1 or above
@@ -45,7 +45,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Nest/images/image2.png)
+![](image2.png)
 
 Let’s create a Node-RED flow to get the readings from the Nest product(s).
 
@@ -104,7 +104,7 @@ Now, configure the nodes:
 
 - It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Nest/images/image3.png)
+![](image3.png)
 
 - Click on the Deploy button, top right, and Confirm deploy.
 - Ensure the “debug” node is turned on. The box extending to the right of the node should be solid/filled in green.
@@ -138,7 +138,7 @@ Now let's get visualize the Nest thermostat data to the Intel IoT Developer Hub.
 Now wire the output of the temp only function to the Nest Temperature chart node and the Net Temperate Chart node to the /sensors mqtt node.
 It should look like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Nest/images/image4.png)
+![](image4.png)
 
 - Click on the Deploy button, top right.
 - Now view the Intel® IoT Gateway Developer Hub via a web browser.  You should see a new sensor and graph called Nest Temperature.

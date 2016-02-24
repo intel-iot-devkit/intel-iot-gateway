@@ -54,7 +54,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Bluemix/images/image1.png)
+![](images/image1.png)
 
 - The sample Bluemix package you installed from the IoT Gateway Developer Hub includes a sample Node-RED flow for communicating to Bluemix.  To import this flow, click on the 3 horizontal lines to the right of the
 Deploy button and select Import, Library, and Bluemix.

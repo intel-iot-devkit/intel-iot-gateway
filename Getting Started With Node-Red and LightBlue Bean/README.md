@@ -8,7 +8,7 @@ Node-RED is a tool for wiring together hardware devices, APIs and online service
 -   IoT Gateway that uses Intel® IoT Gateway Technology
 -   LightBlue Bean
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20LightBlue%20Bean/images/image1.png)
+![](images/image1.png)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -29,7 +29,7 @@ console. You can access the console via <http://ipaddressofthegateway>.
 -   If it says “Disabled” next to Bluetooth Status, click on the Disabled button
 -	It should look like this when setup correctly
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20LightBlue%20Bean/images/image2.png)
+![](images/image2.png)
 
 ## Bluetooth Test ##
 Before we start, let’s make sure the IoT Gateway can discover the LightBlue Bean device. Ensure a battery is installed in the Bean and type the following on the IoT Gateway console prompt: 
@@ -51,7 +51,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20LightBlue%20Bean/images/image3.png)
+![](images/image3.png)
 
 Let’s create a Node-RED flow to get the current temperature from the
 Bean.
@@ -66,14 +66,14 @@ Now, configure the nodes:
 
 -   Double click on the temperature node and click on the pen icon to add a Bean. Set the name to Bean. Leave the UUID blank (if you have more than 1 Bean, you can set this to the MAC address of the Bean you want to talk to. For this example, we’ll assume there is only one in range. Leave the other fields as default. For example:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20LightBlue%20Bean/images/image4.png)
+![](images/image4.png)
 
 -   Click on Add and then OK
 -   Now wire the inject node to the Bean node by clicking and dragging between the small box on the right of the inject node to the small box on the left of the Bean node.
 -   Repeat the wire process connecting the Bean node to the debug node
 -   It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20LightBlue%20Bean/images/image5.png)
+![](images/image5.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 -   Ensure the “debug” node is turned on. The box extending to the right of the node should be solid/filled in green.

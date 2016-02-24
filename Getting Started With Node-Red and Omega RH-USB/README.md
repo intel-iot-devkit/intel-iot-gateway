@@ -10,7 +10,7 @@ connection. The design features a 316 SS NEMA 4 (IP66) housing. A mounting kit i
 -   IoT Gateway that uses Intel® IoT Gateway Technology
 -   Omega RH-USB Sensor
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/images/image1.png)
+![](images/image1.png)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -28,7 +28,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/images/image2.png)
+![](images/image2.png)
 
 Let’s create a Node-RED flow to get the temperature reading from the RH-USB sensor.
 
@@ -43,7 +43,7 @@ Now, configure the nodes:
 
 -   Double click on the serial input node. Click on the pen icon to add a new serial port. In the Serial Port field, enter the device you noted above when you plugged the RH_USB sesnor in to the IoT Gateway. Likely /dev/ttyUSB0. Set the Baud Rate to 9600. Leave the other fields as default. For example:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/images/image3.png)
+![](images/image3.png)
 
 -   Click on OK/Update
 -   Set the name to “RH-USB In” and click Ok.
@@ -60,11 +60,11 @@ Now, configure the nodes:
 -   Click on Ok.
 -   Now wire the RH-USB In node to the Debug node by clicking and dragging between the small box on the right of the RH-USB In to the small box on the left of the Debug node. It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/images/image4.png)
+![](images/image4.png)
 
 -   Now wire the Send F inject node to the Add Carriage return function node and the Add Carriage return function node to the RH-USB Out serial node. It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/images/image5.png)
+![](images/image5.png)
 
 -   Click on the Deploy button; top right.
 -   Ensure the “debug” node is turned on. The box extending to the right of the debug should be solid/filled in green.
@@ -72,7 +72,7 @@ Now, configure the nodes:
 -   Click on the solid/filled in light blue box on the left side of the “Send F” inject node.
     -   You should see the current temperature i Fahrenheit returned in the debug tab. It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/images/image6.png)
+![](images/image6.png)
 
 -   In addition to sending an F to request temperature in Fahrenheit, you can also send the following commands. Try experimenting changing what you end in the Inject node to request different sensor readings.
 

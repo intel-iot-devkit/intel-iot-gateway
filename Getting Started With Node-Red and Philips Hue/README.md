@@ -9,8 +9,8 @@ Node-RED is a tool for wiring together hardware devices, APIs and online service
 -   Philips Hue Bridge (version 2.0 was used in this example)
 -   Philips Hue bulb or light (Philips Hue Go was used in this example)
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Philips%20Hue/images/image1.jpeg)
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Philips%20Hue/images/image2.jpeg)
+![](images/image1.jpeg)
+![](images/image2.jpeg)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -29,7 +29,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Philips%20Hue/images/image3.png)
+![](images/image3.png)
 
 Let’s create a Node-RED flow to turn on a Hue light and set the color.
 
@@ -78,7 +78,7 @@ Now, configure the nodes:
 -   Repeat the wire process connecting the other inject node to the Green function node
 -   Lastly, wire both Red and Green function nodes to the Hue Set node that we named Hue Go. It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Philips%20Hue/images/image4.png)
+![](images/image4.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 -   Click on the solid/filled in light blue box on the left side of the “timestamp” inject node that’s connected to the Red function node

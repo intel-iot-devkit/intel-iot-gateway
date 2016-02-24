@@ -11,7 +11,7 @@ an all-in-one kit that offer everything you need to create a RFID project. The k
 -   SparkFun RFID Starter Kit
 -   USB Mini-B Cable
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20RFID/images/image1.jpeg)
+![](images/image1.jpeg)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -28,7 +28,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20RFID/images/image2.png)
+![](images/image2.png)
 
 Let’s create a Node-RED flow to get the badge readings from the RFID reader.
 
@@ -41,17 +41,17 @@ Now, configure the nodes:
 
 -   Double click on the serial node. Click on the pen icon to add a new serial port. In the Serial Port field, enter the device you noted above when you plugged the RFID reader in to the IoT Gateway. Likely /dev/ttyUSB0. Set the Baud Rate to 9600. Leave the other fields as default. For example:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20RFID/images/image3.png)
+![](images/image3.png)
 
 -   Click on OK/Update
 -   Set the name to “RFID In”. For example:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20RFID/images/image4.png)
+![](images/image4.png)
 
 -   Click OK
 -   Now wire the RFID In node to the Debug node by clicking and dragging between the small box on the right of the RFID In node to the small box on the left of the Debug node. It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20RFID/images/image5.png)
+![](images/image5.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 -   Ensure the “debug” node is turned on. The box extending to the right of the node should be solid/filled in green.

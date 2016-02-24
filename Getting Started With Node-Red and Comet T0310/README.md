@@ -14,7 +14,7 @@ ideal to run at the edge of the network. The Comet* T0310 is an Ambient temperat
 -   IoT Gateway that uses Intel® IoT Gateway Technology
 -   Comet T0310 sensor
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/images/image1.png)
+![](images/image1.png)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -36,7 +36,7 @@ From the console, log in and enter these commands:
 -	systemctl stop serial-getty@ttyS0
 
 ## Installing sample code to read temperature ##
-Below is the source code for reading from the Comet sensor [readtempfromcomet.c](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/src/readtempfromcomet.c):
+Below is the source code for reading from the Comet sensor [readtempfromcomet.c](src/readtempfromcomet.c):
 
 ```
 
@@ -114,7 +114,7 @@ Below is the source code for reading from the Comet sensor [readtempfromcomet.c]
     }
 ```
 
-Copy the source file [readtempfromcomet.c](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/src/readtempfromcomet.c) from this GitHub repo to the /home/gwuser folder on the IoT Gateway.
+Copy the source file [readtempfromcomet.c](src/readtempfromcomet.c) from this GitHub repo to the /home/gwuser folder on the IoT Gateway.
 The code assumes the sensor is plugged in to serial port1 (/dev/ttyS0).  If not, edit the source and change line 13 accordingly.
 To compile, enter: 
 >gcc readtempfromcomet.c –o readtempfromcomet –lmodbus
@@ -131,7 +131,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/images/image2.png)
+![](images/image2.png)
 
 Let’s create a Node-RED flow to get the temperature reading from the Comet T3010 sensor.
 
@@ -182,7 +182,7 @@ Now we need to wire the nodes together
 	
  It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/images/image3.png)
+![](images/image3.png)
 
 
 -   Click on the Deploy button; top right.
@@ -191,7 +191,7 @@ Now we need to wire the nodes together
 -   Click on the solid/filled in light blue box on the left side of the inject node.
     -   You should see the current temperature in Fahrenheit returned in the debug tab. It should look like this:
 
-[](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/images/image4.png)
+[](images/image4.png)
 
 -   In addition, the temperature data should now show up on the IoT Gateway Developer Hub.
 

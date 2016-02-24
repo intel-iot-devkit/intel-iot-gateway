@@ -15,8 +15,8 @@ ideal to run at the edge of the network. Arduino 101 is the ideal successor of t
 -   Arduino* 101
 -	Grove* Shield kit
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Arduino%20101%20with%20the%20Grove%20Shield/images/image1.jpg)
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Arduino%20101%20with%20the%20Grove%20Shield/images/image2.jpg)
+![](images/image1.jpg)
+![](images/image2.jpg)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -56,7 +56,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Arduino%20101%20with%20the%20Grove%20Shield/images/image3.png)
+![](images/image3.png)
 
 Node-RED supports exporting and importing of flows (into source json).
 Below is an export an several example flows we created. If you hightlight and copy this and then import it in to Node-RED, the same nodes and configuration we created manually will automatically appear on the selected Sheet. Import and Export can be found in the Node-RED menu by clicking on the 3 horizontal lines to the right of the Deploy button.
@@ -70,7 +70,7 @@ Example flow
 
 Once imported, it should look something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Arduino%20101%20with%20the%20Grove%20Shield/images/image4.png)
+![](images/image4.png)
 
 -	Before you Deploy it, double-click on any of the Arduino nodes, click on the pen icon, and ensure the Port is set to the port you noted when you plugged the Arduino 101 in to the IoT Gateway.  Click on Update and Ok.
 -	Click on the Deploy button; top right.

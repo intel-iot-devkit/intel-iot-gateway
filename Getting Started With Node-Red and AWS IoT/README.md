@@ -26,149 +26,149 @@ ideal to run at the edge of the network. Amazon* Web Services (AWS IoT) is a man
 
 - Click to start the interactive tutorial after you log in.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image1.png)
+![](images/image1.png)
 
 - Read through the first part of the tutorial that explains the different parts of the solution (Steps 1–6).  When you are done with that you will be prompted to create a thing:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image2.png)
+![](images/image2.png)
 
 - Click on View Thing
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image3.png)
+![](images/image3.png)
 
 - Click on Connect a device:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image4.png)
+![](images/image4.png)
 
 
 - Choose the NodeJS SDK and then click Generate certificate and policy
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image5.png)
+![](images/image5.png)
 
 - Click to download the public key, private key and the certificate to your local computer.  Place them in a directory where you can find them in a future step.  These certificates are what authenticate the IoT gateway and allow it to send data to the AWS IoT cloud.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image6.png)
+![](images/image6.png)
 
 - Copy the text in the box to your clipboard.  This data is specific to your configuration and will be used by the IoT gateway to know how to talk to your account.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image7.png)
+![](images/image7.png)
 
 - Click Return to Thing Detail
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image8.png)
+![](images/image8.png)
 
 ## Setting up the Node-RED Flow ##
 
 - Navigate to the Intel® IoT Gateway Developer Hub.  Log in and click administration and then launch Cloud Commander from the quick tools section on the Administration tab.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image9.png)
+![](images/image9.png)
 
 - Navigate to the /home/gwuser/awsIoT-solution/ directory
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image10.png)
+![](images/image10.png)
 
 - Open the config.json file for editing by right clicking it and choosing Edit
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image11.png)
+![](images/image11.png)
 
 - Paste the contents of your clipboard into the config.json file, overwriting the defaults
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image12.png)
+![](images/image12.png)
 
 - Press ESC and select OK to save changes to the file:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image13.png)
+![](images/image13.png)
 
 - Open the folder that you used earlier to download the public key, private key and certificate.  Position your windows so that you can drag those three files on the file editor window to copy them to the IoT gateway.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image14.png)
+![](images/image14.png)
 
 - If not already connected, the RH-USB sensor to the IoT gateway.  You should see the gauge go live on the IoT Developer Hub dashboard.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image15.png)
+![](images/image15.png)
 
 - Click back on the Administration tab in the Intel IoT Developer Hub.  Click on the Node Red icon under quick tools to open the visual programming interface
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image16.png)
+![](images/image16.png)
 
 - Import the AWS IoT Cloud Tutorial from the Node-RED Library
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image17.png)
+![](images/image17.png)
 
 
 - Position the nodes next to the existing RH-USB sensor flow
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image18.png)
+![](images/image18.png)
 
 - Connect the ‘F to C’ node to the ‘AWS IoT send temp’ node.  This will take the temperature from the RH-USB sensor and send it to the AWS Cloud.
  
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image19.png)
+![](images/image19.png)
 
 - Connect the ‘Temperature’ charting node to the ‘Chart’ node.  This will get the temperature back from AWS IoT and chart it on the IoT gateway.  The data will make the round trip to the cloud before getting charted.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image20.png)
+![](images/image20.png)
 
 
 - Click the Deploy button in the right corner to save the changes to the flow.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image21.png)
+![](images/image21.png)
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image22.png)
+![](images/image22.png)
 
 Check to the IoT Dev Hub dashboard to ensure that the chart reflects the  flow from the cloud data:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image23.png)
+![](images/image23.png)
 
 **Congratulations! You are now successfully transmitting sensor data to/from the AWS IoT Cloud**
 
 ## Creating AWS Rule ##
 - Back on the AWS IoT Console, click the ‘thing’ that you created:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image24.png)
+![](images/image24.png)
 
 - Click on Create a rule
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image25.png)
+![](images/image25.png)
 
 - Fill out the rule as follows
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image26.png)
+![](images/image26.png)
 
 - If you would like to send all of the information you get sent to this ‘thing’, you can select all attributes and all topics as shown below
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image27.png)
+![](images/image27.png)
 
 - Choose to store the data in a file in S3
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image28.png)
+![](images/image28.png)
 
 - Click to create a new bucket if you do not already have one
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image29.png)
+![](images/image29.png)
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image30.png)
+![](images/image30.png)
 
 - Name the bucket with a unique name and choose it from the list.  Put the name of the file that will be stored in S3 as the Key
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image31.png)
+![](images/image31.png)
 
 - Create a new role
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image32.png)
+![](images/image32.png)
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image33.png)
+![](images/image33.png)
 
 - Click Allow to create a new role
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image34.png)
+![](images/image34.png)
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image35.png)
+![](images/image35.png)
 
 - Click on Add action to create the Rule
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image35.5.png)
+![](images/image35.5.png)
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/images/image36.png)
+![](images/image36.png)
 
 ## Verifying Rule ##
 - Click to go to your AWS S3 console at [https://aws.amazon.com/s3/](https://aws.amazon.com/s3/)

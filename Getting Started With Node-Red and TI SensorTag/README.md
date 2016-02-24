@@ -8,7 +8,7 @@ Node-RED is a tool for wiring together hardware devices, APIs and online service
 -   IoT Gateway that uses Intel® IoT Gateway Technology
 -   TI SimpleLink Multi-Standard SensorTag Development Kit
 
-![TI Sensor Tag](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20TI%20SensorTag/images/ti-sensortag.png)
+![](images/ti-sensortag.png)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -30,7 +30,7 @@ console. You can access the console via <https://ipaddressofthegateway>.
 
 It should look like this when setup correctly
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20TI%20SensorTag/images/ti-blesetupscreen.png)
+![](images/ti-blesetupscreen.png)
 
 ## Bluetooth Test ##
 Before we start, let’s make sure the IoT Gateway can discover the SensorTag device. Ensure a battery is installed in the SensorTag power it on (it goes to sleep if there are no active connections to it). To
@@ -53,7 +53,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20TI%20SensorTag/images/ti-noderedscreen.png)
+![](images/ti-noderedscreen.png)
 
 Let’s create a Node-RED flow to get the sensor readings from the SensorTag.
 
@@ -66,12 +66,12 @@ Now, configure the nodes:
 
 -   Double click on the sensorTag node and check what sensors you’d like to include. For this example, let’s check them all. Set the name to sensorTag. Leave the UUID blank (if you have more than 1 SensorTag in range, you can set this to the MAC address of the SensorTag you want to talk to. For this example, we’ll assume there is only one in range. Leave the other fields as default. For example:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20TI%20SensorTag/images/ti-sensornode.png)
+![](images/ti-sensornode.png)
 
 -   Click OK
 -   Now wire the sensorTag node to the Debug node by clicking and dragging between the small box on the right of the sensorTag node to the small box on the left of the Debug node. It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20TI%20SensorTag/images/ti-sensorwire.png)
+![](images/ti-sensorwire.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy.
 -   Ensure the “debug” node is turned on. The box extending to the right of the node should be solid/filled in green.

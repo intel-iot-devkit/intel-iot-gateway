@@ -11,12 +11,12 @@ nearly 1000 different Z-Wave products that all work together.
 -   Z-Wave controller interface (USB)
     -   *In this example, we used an Aeon Labs* DSA02203-ZWUS Z-Wave Z-Stick Series 2*
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image1.jpeg)
+![](images/image1.jpeg)
 
 -   At least one Z-Wave device
     -   A simple plug in lamp module and a desk lamp is a good place to start for initial testing. *In this example, we used a GE* Plug-in Smart Switch model 12719.*
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image2.jpeg)
+![](images/image2.jpeg)
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -53,7 +53,7 @@ The Node-RED browser interface can be reached via
 <http://ipaddressofthegateway:1880>. When it first comes up it will look
 something like this.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image3.png)
+![](images/image3.png)
 
 Drag the following nodes from the left bar on to Sheet 1
 
@@ -70,14 +70,14 @@ First, we need to get the Z-Wave Node ID from the Smart Switch you added in Sett
 -   Now wire the “z-wave in” node to the “z-wave in debug” node by clicking and dragging between the small box on the right of the “z-wave in” node to the small box on the left of the “z-wave in debug node”.
 -   It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image4.png)
+![](images/image4.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy. It’s ok some of the nodes are not setup yet. We’ll get to those next.
 -   Ensure the “z-wave in debug” node is turned on. The box extending to the right of the node should be solid/filled in green.
 -   Switch the column on the right from the Info tab to the debug tab.
 -   Press the button on the Z-Wave Smart Switch. The lamp should toggle on/off. A debug message like this should appear each time you toggle the Smart Switch.
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image5.png)
+![](images/image5.png)
 
 -   Note the numeric value listed after “nodeid”. In this case, it’s 4.
 
@@ -85,13 +85,13 @@ Ok, now that we know the node id, let’s setup a flow to control the Z-Wave Sma
 
 -   Double click on one of the inject nodes. Set the fields as follows:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image6.png)
+![](images/image6.png)
 
 -	Replace the nodeid numeric value with the value of your z-wave switch as you noted above*
 -   Click on Ok
 -   Double click on the other inject node. Set the fields as follows:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image7.png)
+![](images/image7.png)
 
 -	Replace the nodeid numeric value with the value of your z-wave switch as you noted above*
 -   Click on Ok
@@ -100,11 +100,11 @@ Ok, now that we know the node id, let’s setup a flow to control the Z-Wave Sma
 -   Now wire the “Light On” and Light Off nodes to the “z-wave out” node by clicking and dragging between the small box on the right of each node to the small box on the left of the “z-wave out” node.
 -   It should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image8.png)
+![](images/image8.png)
 
 Your two flows together should look like this:
 
-![](http://msbreton-iotwb1.fm.intel.com/root/iotg_recipes/raw/master/Getting%20Started%20With%20Node-Red%20and%20Z-Wave/images/image9.png)
+![](images/image9.png)
 
 -   Click on the Deploy button, top right, and Confirm deploy
 -   Click on the solid/filled in light blue box on the left side of the “Light On” inject node.
