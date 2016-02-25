@@ -19,7 +19,7 @@ This recipe describes the steps to remote debug a nodejs app running on IoT Gate
    
     $ sudo npm install –g node-inspector
  
-* PC : install a Chrome browser - link here
+* PC : install a Chrome* browser
  
 ##Setup & Debug:
  
