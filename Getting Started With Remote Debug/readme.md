@@ -1,12 +1,9 @@
-**Recipe: Remote Debug nodejs App on Intel IoT Gateway**
-
-*Tuesday, February 23, 2016 6:22 PM*
+# Remote Debug nodejs applications on IoT Gateways that use Intel® IoT Gateway Technology #
+<cr>
  
-Ver 0.9.1 - Nghia Nguyen
+## Introduction: ##
  
-##Introduction:
- 
-This recipe describes the steps to remote debug a nodejs app running on IoT Gateways that use Intel® IoT Gateway Technology with the Node-Inspector* tool.   Although the Intel® IoT Gateway Developer Hub supports remote debugging JavaScript* applications with Helix App Cloud; this is an alternative approach.   
+This recipe describes the steps to remote debug a nodejs app running on IoT Gateways that use Intel® IoT Gateway Technology with the Node-Inspector* tool.   Although the Intel® IoT Gateway Developer Hub supports remote debugging JavaScript* applications with Wind River® Helix™ App Cloud; this is an alternative approach.   
  
 ###Scenario:  
 - IoT Gateways that use Intel® IoT Gateway Technology		: The IoT gateway where the nodejs app is running
