@@ -24,3 +24,6 @@ Here you will find recipes, tutorials, and examples for connecting sensors and c
 - [Getting Started With Node-RED and Z-Wave](Getting%20Started%20With%20Node-Red%20and%20Z-Wave/README.md)
 
 - [Getting Started with Node-RED and Nest](Getting%20Started%20With%20Node-Red%20and%20Nest/README.md)
+
+
+- [Getting Started with Remote Debug node.js](Getting%20Started%20With%20Remote%20Debug/README.md)
