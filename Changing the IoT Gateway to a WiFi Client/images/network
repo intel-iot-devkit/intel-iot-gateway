@@ -1,0 +1,37 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'wan'
+	option ifname 'eth0'
+	option proto 'dhcp'
+
+config interface 'lan'
+	option ifname 'wlan0'
+	option type 'bridge'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+
+config interface 'wwan'
+	option ifname '3g-wwan'
+	option device '/dev/ttyACM0'
+	option ppp_redial 'demand'
+	option defaultroute '1'
+	option peerdns '1'
+	option service 'umts_first'
+	option sconnservice 'UMTS'
+	option dialnumber '*99***1#'
+	option proto 'none'
+
+config device 'modem_cell'
+	option name 'modem_cell'
+	option present 'No'
+
+config device 'sim_card'
+	option name 'sim_card'
+	option present 'No'
+

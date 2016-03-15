@@ -1,0 +1,16 @@
+config wifi-device  wlan0
+	option type     mac80211
+	option channel  11
+	option hwmode	11ng
+	option path	'pci0000:00/0000:00:1c.1/0000:02:00.0'
+	option htmode	HT20
+	option disabled 0
+
+config wifi-iface
+	option device   wlan0
+	option network  lan
+	option mode     ap
+	option ssid     IDPDK-4001
+	option encryption psk2
+	option key windriveridp
+
