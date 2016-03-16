@@ -1,6 +1,10 @@
 # Intel® IoT Gateway Technology 
 Here you will find recipes, tutorials, and examples for connecting sensors and cloud solutions to IoT Gateways that use Intel® IoT Gateway Technology.
 
+- [Clearing Secure Boot Keys](Clearing%20Secure%20Boot%20Keys/README.md)
+
+- [Changing the IoT Gateway to a WiFi Client](Changing%20the%20IoT%20Gateway%20to%20a%20WiFi%20Client/README.md)
+
 - [Getting Started With Node-RED and AWS IoT](Getting%20Started%20With%20Node-Red%20and%20AWS%20IoT/README.md)
  
 - [Getting Started With Cloud Commander](Getting%20Started%20With%20Cloud%20Commander/README.md)
