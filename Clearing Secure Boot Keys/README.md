@@ -6,7 +6,6 @@ When an IoT Gateway that uses Intel® IoT Gateway Technology is installed, the s
 
 ## Required Hardware ##
 -   IoT Gateway that uses Intel® IoT Gateway Technology
--   A system running a web browser.  In the case of this tutorial, we used a laptop running Windows 10 and Chrome.
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above

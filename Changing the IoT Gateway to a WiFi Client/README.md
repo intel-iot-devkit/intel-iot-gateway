@@ -42,7 +42,7 @@ To access the IoT Gateway Admin console, click on the Administration Icon.  You 
 
 Now click on the LAUNCH button under the Gear icon.  This will open another browser window or tab.  Log in with your root password.  It will look like this:
 
-![](images/image2.png)
+![](images/image3.png)
 
 This is the admin console for the gateway.  From here you can manage and configure many gateway settings but we'll be focusing on the network section.
 

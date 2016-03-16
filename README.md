@@ -1,6 +1,8 @@
 # Intel® IoT Gateway Technology 
 Here you will find recipes, tutorials, and examples for connecting sensors and cloud solutions to IoT Gateways that use Intel® IoT Gateway Technology.
 
+- [Changing the Default IP Address](Changing%20the%20Default%20IP%20Address/README.md)
+
 - [Clearing Secure Boot Keys](Clearing%20Secure%20Boot%20Keys/README.md)
 
 - [Changing the IoT Gateway to a WiFi Client](Changing%20the%20IoT%20Gateway%20to%20a%20WiFi%20Client/README.md)
