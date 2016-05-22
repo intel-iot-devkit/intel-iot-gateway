@@ -4,7 +4,7 @@
  - You must have an Azure account.  You can get your free Azure account from Microsoft by following the instructions on at this [link](https://azure.microsoft.com/en-us/free/).
  - Follow the instructions at this [link]([https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md](https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md)) to create the IoT Hub in your Azure account.  Tip: You should create your IoT Hub instance in the Free Tier if this is just a trial account.
  - This Tutorial uses the Device Explorer sample executable from the Azure SDK to prevent you from having to program to create a Device in your IoT Hub.  It can be downloaded and installed from this [link](https://github.com/Azure/azure-iot-sdks/releases).  Scroll down to the Downloads section and download and install **SetupDeviceExplorer.msi** on Windows.
- ![](images\image1.png)## Access The Developer Hub ##To access the Developer Hub, open your web browser and go the <http://ipaddressofthegateway>. Log in with the username and & password.  Once connected, you should see something like this:![](images\image2.png)## Install the Azure SDK and the Node-Red Node on the Gateway ##Once connected to the Developer Hub, click on the Administration tab and Launch Cloud Commander.  If you need a more in depth tutorial on how to use Cloud Commander, please refer to the that [tutorial](https://github.com/intel-iot-devkit/Intel-IoT-Gateway/tree/master/Getting%20Started%20With%20Cloud%20Commander).![](images\image3.png)Once Cloud Commander is open, scroll down to the bottom of the page and click the Console icon.![](images\image4.png)This will bring up a console where you can copy and paste the following commands to download the Azure SDK and install the Azure Node-Red Node:Change to the home directory: >cd ~/
+ ![](images/image1.png)## Access The Developer Hub ##To access the Developer Hub, open your web browser and go the <http://ipaddressofthegateway>. Log in with the username and & password.  Once connected, you should see something like this:![](images/image2.png)## Install the Azure SDK and the Node-Red Node on the Gateway ##Once connected to the Developer Hub, click on the Administration tab and Launch Cloud Commander.  If you need a more in depth tutorial on how to use Cloud Commander, please refer to the that [tutorial](https://github.com/intel-iot-devkit/Intel-IoT-Gateway/tree/master/Getting%20Started%20With%20Cloud%20Commander).![](images/image3.png)Once Cloud Commander is open, scroll down to the bottom of the page and click the Console icon.![](images/image4.png)This will bring up a console where you can copy and paste the following commands to download the Azure SDK and install the Azure Node-Red Node:Change to the home directory: >cd ~/
  
  Get a copy of the Azure SDK on the gateway:
  >git clone https://github.com/Azure/azure-iot-sdks
@@ -41,13 +41,13 @@ Once you have this string copied, paste it into the Device Explorer application 
 
 Next, Click the Management tab to create a new IoT Hub Device.  Create a new device and call it IntelIoTGateway.
 
-![](images\image7.png)
+![](images/image7.png)
 
 After you click Create, you should receive a message that the device has been created.  Click Done.
 
 Now click the Data tab in the Device Explorer, ensure that your newly created Device ID is selected and click Monitor.
 
-![](images\image8.png)
+![](images/image8.png)
 
 This will continue to monitor the device in the cloud as we complete the rest of the tutorial.
 
@@ -55,7 +55,7 @@ This will continue to monitor the device in the cloud as we complete the rest of
 
 Switch back to the Intel IoT Gateway Developer Hub interface running at the IP Address if your gateway.  Now launch Node-Red from the Administration Tab:
 
-![](images\image9.png)
+![](images/image9.png)
 
 Authenticate if necessary and scroll down to the bottom left of the page of the list of Node-Red nodes that are available.  You should now see a node for Azure:
 
@@ -75,10 +75,10 @@ Open the Azure Node in Node-Red and paste the connection string into the Connect
 
 Click OK and then click Deploy in Node-Red to save the changes.
 
-![](images\image14.png)
+![](images/image14.png)
 
 You should see that in Node-Red that the Azure node changes from Disconnected eventually to Sent Message.  You can now switch to the Device Explorer Monitor tab and see that there are now messages flowing to your device in the Azure IoT Hub.
 
-![](images\image15.png)
+![](images/image15.png)
 
-![](images\image16.png)
+![](images/image16.png)
