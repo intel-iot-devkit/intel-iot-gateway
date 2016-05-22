@@ -1,4 +1,4 @@
-# Intel® IoT Gateway Technology 
+﻿# Intel® IoT Gateway Technology 
 Here you will find recipes, tutorials, and examples for connecting sensors and cloud solutions to IoT Gateways that use Intel® IoT Gateway Technology.
 
 - [Changing the Default IP Address](Changing%20the%20Default%20IP%20Address/README.md)
@@ -31,5 +31,6 @@ Here you will find recipes, tutorials, and examples for connecting sensors and c
 
 - [Getting Started with Node-RED and Nest](Getting%20Started%20With%20Node-Red%20and%20Nest/README.md)
 
-
 - [Getting Started with Remote Debug node.js](Getting%20Started%20With%20Remote%20Debug/README.md)
+
+- [Updating the Intel IoT Gateway Developer Packages.js](Updating%20the%20Intel%20IoT%20Gateway%20Developer%20Packages/README.md)
