@@ -77,8 +77,10 @@ Click OK and then click Deploy in Node-Red to save the changes.
 
 ![](images/image14.png)
 
-You should see that in Node-Red that the Azure node changes from Disconnected eventually to Sent Message.  You can now switch to the Device Explorer Monitor tab and see that there are now messages flowing to your device in the Azure IoT Hub.
+You should see that in Node-Red that the Azure node changes from Disconnected eventually to Sent Message.
 
 ![](images/image15.png)
+
+You can now switch to the Device Explorer Monitor tab and see that there are now messages flowing to your device in the Azure IoT Hub.
 
 ![](images/image16.png)
