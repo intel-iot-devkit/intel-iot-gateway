@@ -1,4 +1,4 @@
-﻿# Intel® IoT Gateway Technology 
+# Intel® IoT Gateway Technology 
 Here you will find recipes, tutorials, and examples for connecting sensors and cloud solutions to IoT Gateways that use Intel® IoT Gateway Technology.
 
 - [Changing the Default IP Address](Changing%20the%20Default%20IP%20Address/README.md)
@@ -18,6 +18,8 @@ Here you will find recipes, tutorials, and examples for connecting sensors and c
 - [Getting Started With Node-RED and Comet T0310](Getting%20Started%20With%20Node-Red%20and%20Comet%20T0310/README.md)
 
 - [Getting Started With Node-RED and LightBlue Bean](Getting%20Started%20With%20Node-Red%20and%20LightBlue%20Bean/README.md)
+
+- [Getting Started With Node-Red and Microsoft Azure IoT Hub](Getting%20Started%20With%20Node-Red%20and%20Microsoft%20Azure%20IoT%20Hub/README.md)
 
 - [Getting Started With Node-RED and Omega RH-USB](Getting%20Started%20With%20Node-Red%20and%20Omega%20RH-USB/README.md)
 
