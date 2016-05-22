@@ -33,4 +33,4 @@ Here you will find recipes, tutorials, and examples for connecting sensors and c
 
 - [Getting Started with Remote Debug node.js](Getting%20Started%20With%20Remote%20Debug/README.md)
 
-- [Updating the Intel IoT Gateway Developer Packages.js](Updating%20the%20Intel%20IoT%20Gateway%20Developer%20Packages/README.md)
+- [Updating the Intel IoT Gateway Developer Packages](Updating%20the%20Intel%20IoT%20Gateway%20Developer%20Packages/README.md)
