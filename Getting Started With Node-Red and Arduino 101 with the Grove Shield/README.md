@@ -52,7 +52,7 @@ Along the left side of the Node-RED screen you'll see a series of nodes. These a
 
 ![](images/node-red-contrib-upm-nodes.png)
 
-Drag and drop nodes onto the canvas and arrange them as shown below. For some of the nodes we'll need multiple copies. Use your mouse to connect wires between the nodes as shown. We'll use the Watson IoT node later so don't include it for now.
+Drag and drop nodes onto the canvas and arrange them as shown below. For some of the nodes we'll need multiple copies. Use your mouse to connect wires between the nodes as shown.
 
 ![](images/node-red-flow.png)
 
