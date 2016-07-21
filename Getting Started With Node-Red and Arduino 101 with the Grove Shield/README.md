@@ -8,7 +8,7 @@ flow editor that makes it easy to wire together flows using the wide
 range nodes in the palette. Flows can be then deployed to the run-time in
 a single-click. The light-weight run-time is built on Node.js, taking
 full advantage of its event-driven, non-blocking model. This makes it
-ideal to run at the edge of the network. Arduino 101 is the ideal successor of the UNO, updated with the latest technologies including the Intel(R) Curie(TM) processor.  It recognizes gestures, and features a six-axis accelerometer and gyroscope.  Grove is a modulated, ready-to-use tool set. Much like Lego, it takes a building block approach to assembling electronics. Compared with the traditional, complicated learning method of using a breadboard and various electronic components to assemble a project, Grove simplifies and condenses the learning process significantly. The Grove system consists of a base shield and various modules with standardized connectors. The base shield allows for easy connection of any microprocessor input or output from the Grove modules, and every Grove module addresses a single function, such as a simple button or a more complex heart rate sensor. Each one comes with clear documentation and demo code to help you get started quickly.
+ideal to run at the edge of the network. Arduino 101 is the ideal successor of the UNO, updated with the latest technologies including the Intel(R) Curie(TM) processor.  It recognizes gestures and features a six-axis accelerometer and gyroscope.  Grove is a modulated, ready-to-use tool set. Much like Lego, it takes a building block approach to assembling electronics. Compared with the traditional, complicated learning method of using a breadboard and various electronic components to assemble a project, Grove simplifies and condenses the learning process significantly. The Grove system consists of a base shield and various modules with standardized connectors. The base shield allows for easy connection of any microprocessor input or output from the Grove modules, and every Grove module addresses a single function, such as a simple button or a more complex heart rate sensor. Each one comes with clear documentation and demo code to help you get started quickly.
 
 ## Required Hardware ##
 -   IoT Gateway that uses Intel® IoT Gateway Technology
@@ -47,8 +47,8 @@ ideal to run at the edge of the network. Arduino 101 is the ideal successor of t
 ## Connecting the Arduino 101 ##
 Plug the Arduino 101 in to power
 Plug the Arduino 101 in to a USB port on your IoT Gateway. On
-the console of the IoT gateway, you should see a message saying what serial
-device was created for the USB interface. It is likely /dev/ttyACM0.
+the console of the IoT gateway you should see a message saying what serial
+device was created for the USB interface (it is likely /dev/ttyACM0).
 Please make a note of what device was created.
 
 ## Using Node-RED ##
@@ -77,7 +77,7 @@ Once imported, it should look something like this.
 -   Ensure the “debug” node is turned on. The box extending to the right of the debug should be solid/filled in green.
 -   After a moment, you should see a green indicator and the word connected appear under each Arduino node.
 -   Try turning on the debug node for the Temp sensor by click on the green bock to the right of each debug node.  You should see the temperature reading appear in the debug tab every second.
--   -   Try turning on the debug node for the Light sensor by click on the green bock to the right of each debug node.  You should see the light reading appear in the debug tab every second.
+-   Try turning on the debug node for the Light sensor by click on the green bock to the right of each debug node.  You should see the light reading appear in the debug tab every second.
 -   Ensure the debug nodes are turned on for the Push Button, Touch, and Rotary Sensor flows by click on the green bock to the right of each debug node.
 -	Try pressing the push button, touch sensor, and or turning the rotary sensor and see the values appear in the debug tab.
 - Now view the Intel® IoT Gateway Developer Hub via a web browser.  You should see a new sensors and graphs for the Grove Temperature sensor and Grove Light Sensor.
