@@ -6,7 +6,7 @@ Cloud Commander* is a web based file manager with console and editor. Using Clou
 
 ## Required Hardware ##
 -   IoT Gateway that uses Intel® IoT Gateway Technology
--   A system running a web browser.  IN the case of this tutorial, we used a laptop running Windows 10 and Chrome.
+-   A system running a web browser.  In the case of this tutorial, we used a laptop running Windows 10 and Chrome.
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
@@ -91,7 +91,7 @@ Much better.  Now the application runs correctly.
 
 > cd /home/gwuser
 
-- Now type rpm -Uvh and the rpm name.  For exmaple:
+- Now type rpm -Uvh and the rpm name.  For example:
 
 > rpm -Uvh rpmfilename.rpm
   
