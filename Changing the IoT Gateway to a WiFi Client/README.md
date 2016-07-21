@@ -5,7 +5,7 @@
 This process is a work in progress.  Do not attempt unless you actively working with a customer support representative or are prepared to rebuild your IoT Gateway if something goes wrong.
 
 ## Overview ##
-By default, the your IoT Gateway that uses Intel® IoT Gateway Technology comes pre-configured setup as a WiFi Access Point.  This is so you can connect a client to it access it for initial evaluation and later configuration without connecting it to a wired network.  If you want to connect the IoT Gateway to a WiFi network, you'll need to change it's network configuration from an Access Point to a client.  This can be easily done via the administration portal acceded from the Intel® IoT Gateway Developer Hub.
+By default, your IoT Gateway that uses Intel® IoT Gateway Technology comes pre-configured setup as a WiFi Access Point.  This is so you can connect a client to it access it for initial evaluation and later configuration without connecting it to a wired network.  If you want to connect the IoT Gateway to a WiFi network, you'll need to change it's network configuration from an Access Point to a client.  This can be easily done via the administration portal accessed from the Intel® IoT Gateway Developer Hub.
 
 ## Required Hardware ##
 -   IoT Gateway that uses Intel® IoT Gateway Technology
@@ -93,7 +93,7 @@ This is the admin console for the gateway.  From here you can manage and configu
 7. Select lan
 8. Click on Save & Apply
 
-If you plug a wired connection to to Eth0, you sound now be able to reach the IoT Gateway via the address assigned to that connection. You can use the ifconfig command mentioned above to obtain the IP address.  If you wan to set a static IP address, please refer to the next section.
+If you plug a wired connection to Eth0, you sound now be able to reach the IoT Gateway via the address assigned to that connection. You can use the ifconfig command mentioned above to obtain the IP address.  If you wan to set a static IP address, please refer to the next section.
 
 ## Using static IP addresses ##
 
@@ -111,7 +111,7 @@ This is the admin console for the gateway.  From here you can manage and configu
 3. Click on Switch protocol
 4. Enter the IP address and associated netmask, gateway, and DNS server
 5. Click on Save & Apply
-	1. WARNING, you are changing the IP address of interface you are using to access the IoT Gateway you will need to change your URL to the new address after Clicking on Save & Apply.
+  * WARNING, you are changing the IP address of interface you are using to access the IoT Gateway you will need to change your URL to the new address after Clicking on Save & Apply.
 
 ## Restoring factory network settings ##
 These links provide the default [network](images/network) and [wireless](images/wireless) config files.  If through a configuration error the gateway becomes inaccessible, you can place these files on a USB flash drive and copy them to the gateway using a directly connected monitor and keyboard.  Both files need to be copied in to the /etc/config folder.  Placing them there and rebooting will return the network configuration to the default settings; (with one exception. The SSID will be "IDPDK-4001" and not IDPDK-lastfourofyourmacaddress).
