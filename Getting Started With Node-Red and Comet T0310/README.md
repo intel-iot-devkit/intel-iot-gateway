@@ -123,7 +123,7 @@ To test the complied code, execute as follows:
 >./readtempfromcomet
 
 
-You should get back a 3 digit number, like 733.  That's the current temperate in Fahrenheit without the decimal point.
+You should get back a 3 digit number, like 733.  That's the current temperature in Fahrenheit without the decimal point.
 
 
 ## Using Node-RED ##
@@ -168,7 +168,7 @@ Now, configure the nodes
 	- Source = Local Comet Sensor
 	- Click on Ok
 -Double click on the mqtt node and set the fields as follows:
-	- Server = localhost:1883 (this should be selectable in the drop down
+	- Server = localhost:1883 (this should be selectable in the drop down)
 	- Topic = /sensors
 	- Click on Ok
 
