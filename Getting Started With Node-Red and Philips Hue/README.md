@@ -17,7 +17,7 @@ Node-RED is a tool for wiring together hardware devices, APIs and online service
 -   Node.js is installed on the IoT Gateway (installed by default)
 -   Node-RED node node-red-contrib-hue is installed on the IoT Gateway
 	- You can install this package by clicking on Packages and then Add Packages from the Intel® IoT Gateway Developer Hub
--   Node-ED is installed on the IoT Gateway and is running (installed by default)
+-   Node-Red is installed on the IoT Gateway and is running (installed by default)
 -   The Philips Hue bridge has been setup and at least one light has been added
 
 ## Important Notes ##

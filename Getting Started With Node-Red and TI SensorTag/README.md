@@ -76,7 +76,7 @@ Now, configure the nodes:
 -   Click on the Deploy button, top right, and Confirm deploy.
 -   Ensure the “debug” node is turned on. The box extending to the right of the node should be solid/filled in green.
 -   Switch the column on the right from the Info tab to the debug tab.
--   The sensor readings show appear in the debug tab (you may need to press the power button on the SensorTag to turn it on if it’s gone to sleep since we turned it on in the above steps.
+-   The sensor readings show appear in the debug tab, you may need to press the power button on the SensorTag to turn it on if it’s gone to sleep since we turned it on in the above steps.
 
 **Congratulations! You are successfully communicating via BlueTooth low energy to a SensorTag device.**
 

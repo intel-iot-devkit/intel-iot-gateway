@@ -3,7 +3,7 @@
 
 ## Overview ##
 Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways. Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide
-range nodes in the palette. Flows can be then deployed to the run-time in a single-click. The light-weight run-time is built on Node.js, taking full advantage of its event-driven, non-blocking model. This makes it ideal to run at the edge of the network. Turn it up, turn it down. The Nest* Learning Thermostat remembers what temperatures you like, creates a custom schedule for your home, and turns itself down when you’re away. Once it’s learned your schedule, Nest can save 20% on your heating and cooling bills. And if you want remote control, just use your smart phone, tablet or computer. Nest System Match optimizes controls for your heating and cooling system, while the Nest Leaf guides you to energy-efficient temperatures. With Energy History and Energy Report, you can see how much energy you’ve used and get tips to help you save more.
+range nodes in the palette. Flows can be then deployed to the run-time in a single-click. The light-weight run-time is built on Node.js, taking full advantage of its event-driven, non-blocking model. This makes it ideal to run at the edge of the network. Turn it up, turn it down. The Nest* Learning Thermostat remembers what temperatures you like, creates a custom schedule for your home, and turns itself down when you’re away. Once its learned your schedule, Nest can save 20% on your heating and cooling bills. And if you want remote control, just use your smart phone, tablet or computer. Nest System Match optimizes controls for your heating and cooling system, while the Nest Leaf guides you to energy-efficient temperatures. With Energy History and Energy Report, you can see how much energy you’ve used and get tips to help you save more.
 
 ## Required Hardware ##
 - IoT Gateway that uses Intel® IoT Gateway Technology
@@ -18,7 +18,7 @@ range nodes in the palette. Flows can be then deployed to the run-time in a sing
 - Node-RED node node-red-contrib-nest is installed on the IoT Gateway
 	- You can install this package by clicking on Packages and then Add Packages from the Intel® IoT Gateway Developer Hub
 - Node-RED is installed on the IoT Gateway and is running (installed by default)
-- Nest products (Thermostat(s) and or Protect(s) are installed, functioning, and are connected to a Nest cloud account
+- Nest products (Thermostat(s) and or Protect(s) are installed, functioning, and are connected to a Nest cloud account)
 
 ## Nest Developer Account Setup ##
 You will need a Nest Developer Program account account to query your the Nest cloud for your Nest data.  
