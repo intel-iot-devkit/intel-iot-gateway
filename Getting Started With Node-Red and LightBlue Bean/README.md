@@ -43,7 +43,7 @@ It should respond with something like this:
 >B4:99:4C:1E:C0:C0 Bean
 
 
-It may also show other Bluetooh devices in range
+It may also show other Bluetooth devices in range
 Press Ctrl-C to stop the scanning tool. If it doesn’t show your Bean, try removing the battery from your Bean, reinserting it, and trying the hcitool again.
 
 ## Using Node-RED ##
