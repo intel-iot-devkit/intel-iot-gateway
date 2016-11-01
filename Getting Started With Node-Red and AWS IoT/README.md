@@ -14,110 +14,140 @@ ideal to run at the edge of the network. Amazon* Web Services (AWS IoT) is a man
 -   IoT Gateway that uses Intel® IoT Gateway Technology
 
 ## Assumptions ##
--   Intel® IoT Gateway Technology version 3.1 or above
+-   [Intel® IoT Gateway Technology version 3.1](https://shopiotmarketplace.com/iot/index.html#/details?pix=58) or above
 -   Node.js is installed on the IoT Gateway (installed by default)
 -   Node-RED node node-red-node-serialport is installed on the IoT Gateway (installed by default)
-- AWS IoT package is installed on the IoT Gateway 
-	- You can install this package by clicking on Packages and then Add Packages from the Intel® IoT Gateway Developer Hub
 -   Node-RED is installed on the IoT Gateway and is running (installed by default)
 
 ## Setting up AWS IoT ##
-- Sign up for a new AWS IoT account by logging in with your existing Amazon account or creating a new one by visiting [https://aws.amazon.com/iot/]( https://aws.amazon.com/iot/)
+Sign up for a new AWS IoT account by logging in with your existing Amazon account or creating a new one by visiting [https://aws.amazon.com/iot/]( https://aws.amazon.com/iot/)
 
-- Click to start the interactive tutorial after you log in.
+Click to start the interactive tutorial after you log in.
 
 ![](images/image1.png)
 
-- Read through the first part of the tutorial that explains the different parts of the solution (Steps 1–6).  When you are done with that you will be prompted to create a thing:
+Read through the first part of the tutorial that explains the different parts of the solution (Steps 1–6).  When you are done with that you will be prompted to create a thing:
 
 ![](images/image2.png)
 
-- Click on View Thing
+Click on View Thing
 
 ![](images/image3.png)
 
-- Click on Connect a device:
+Click on Connect a device:
 
 ![](images/image4.png)
 
-
-- Choose the NodeJS SDK and then click Generate certificate and policy
+Choose the NodeJS SDK and then click Generate certificate and policy
 
 ![](images/image5.png)
 
-- Click to download the public key, private key and the certificate to your local computer.  Place them in a directory where you can find them in a future step.  These certificates are what authenticate the IoT gateway and allow it to send data to the AWS IoT cloud.
+Click to download the public key, private key and the certificate to your local computer.  Place them in a directory where you can find them in a future step.  These certificates are what authenticate the IoT gateway and allow it to send data to the AWS IoT cloud.  They will be used later.
 
 ![](images/image6.png)
 
-- Copy the text in the box to your clipboard.  This data is specific to your configuration and will be used by the IoT gateway to know how to talk to your account.
+Leave this tab in your browser open and in another browser tab navigate back to the Intel® IoT Gateway Developer Hub.  You will need this information for AWS IoT to configure your gateway in the later steps.
 
 ![](images/image7.png)
 
-- Click Return to Thing Detail
+## Setting up the Node-RED Flow ##
+
+Connect to the Developer Hub, click on the Administration tab and Launch Cloud Commander.  If you need a more in depth tutorial on how to use Cloud Commander, please refer to the that [tutorial](https://github.com/intel-iot-devkit/Intel-IoT-Gateway/tree/master/Getting%20Started%20With%20Cloud%20Commander).
 
 ![](images/image8.png)
 
-## Setting up the Node-RED Flow ##
-
-- Navigate to the Intel® IoT Gateway Developer Hub.  Log in and click administration and then launch Cloud Commander from the quick tools section on the Administration tab.
+Once Cloud Commander is open, scroll down to the bottom of the page and click the Console icon.
 
 ![](images/image9.png)
 
-- Navigate to the /home/gwuser/awsIoT-solution/ directory
+This will bring up a console where you can copy and paste the following commands to install the AWS IoT Node-Red Node:
+
+ Change to the home directory:
+ >cd ~
+ 
+ Make a new directory to hold the AWS certificates:
+ >mkdir .awscerts
+ 
+ Go into that directory and download the public key (ensure your gateway is connected to the internet):
+ >cd .awscerts
+ >
+ >wget https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem -O root-CA.crt
+ 
+ Switch to the Node-Red working directory:
+ 
+ >cd /usr/lib64/node_modules/node-red/node_modules
+ 
+ Download the packages that are required to make the node work:
+ >npm install node-red-contrib-aws-iot-hub
+
+Once this is done, your screen should look like the following:
 
 ![](images/image10.png)
 
-- Open the config.json file for editing by right clicking it and choosing Edit
+Now restart Node-Red by issuing the following commands:
+
+>systemctl stop node-red-experience
+
+>systemctl start node-red-experience
+
+Alternatively you can start and stop the service from the packages tab.  It will take a few seconds to start.
+
+Hit escape to exit the command view and go back to the file explorer view.  Open the folder that you created earlier /root/.awscerts.  Position your windows so that you can drag those three files on the file editor that you downloaded earlier from AWS IoT and copy them to the IoT gateway.
 
 ![](images/image11.png)
 
-- Paste the contents of your clipboard into the config.json file, overwriting the defaults
+Once the files are copied, you need to rename them to match the format needed by the AWS IoT Node Red node.  The node expects the files to be named as follows:
+
+    /root/.awscerts/
+                    |--YourUniqueClientIdentifier-private.pem.key
+                    |--YourUniqueClientIdentifier-certificate.pem.crt
+                    |--root-CA.crt (downloaded earlier)
+                    
+Where YourUniqueClientIdentifier is the AWS thing name what you put when creating your thing.  You can refer to the other tab that you have open.  For example: If Intel_IoT_Gateway was the name of your AWS IoT Thing you created, then your folder would look like this:
 
 ![](images/image12.png)
 
-- Press ESC and select OK to save changes to the file:
+You can ignore the *-public.pem.key file.
+
+# Connecting a Sensor ##
+
+If not already connected, the RH-USB sensor to the IoT gateway.  You should see the gauge go live on the IoT Developer Hub dashboard.
 
 ![](images/image13.png)
 
-- Open the folder that you used earlier to download the public key, private key and certificate.  Position your windows so that you can drag those three files on the file editor window to copy them to the IoT gateway.
+Click back on the Administration tab in the Intel IoT Developer Hub.  Click on the Node Red icon under quick tools to open the visual programming interface:
 
 ![](images/image14.png)
 
-- If not already connected, the RH-USB sensor to the IoT gateway.  You should see the gauge go live on the IoT Developer Hub dashboard.
+In Node Red, you should now see the aws-mqtt node that you installed earlier.  Drag the aws node from the Output section next to the default flow.
 
 ![](images/image15.png)
 
-- Click back on the Administration tab in the Intel IoT Developer Hub.  Click on the Node Red icon under quick tools to open the visual programming interface
-
+Connect the ‘F to C’ node to the ‘aws-mqtt’ node.  This will take the temperature from the RH-USB sensor and send it to the AWS Cloud.
+ 
 ![](images/image16.png)
-
-- Import the AWS IoT Cloud Tutorial from the Node-RED Library
+ 
+Now double click the 'aws-mqtt' node to configure it.  Click the pencil to add a new IoT Device:
 
 ![](images/image17.png)
 
-
-- Position the nodes next to the existing RH-USB sensor flow
+Fill out the settings based on the information in your AWS IoT browser tab that you left open earlier.  Pay special attention to the Client ID, Region and AWS Certs path.  Click Add.
 
 ![](images/image18.png)
 
-- Connect the ‘F to C’ node to the ‘AWS IoT send temp’ node.  This will take the temperature from the RH-USB sensor and send it to the AWS Cloud.
- 
+Now create an MQTT  Topic that you will send your sensor information to.  Something like /sensor/temp.  Click OK to save the aws-iot output node.
+
 ![](images/image19.png)
 
-- Connect the ‘Temperature’ charting node to the ‘Chart’ node.  This will get the temperature back from AWS IoT and chart it on the IoT gateway.  The data will make the round trip to the cloud before getting charted.
+Optionally, you can also create an input node with the same Device and Topic settings and send the information to Debug. This will subscribe to the same topic that is being published to, and when there is a message posted, it will grab it and send it to the debug tab.  This is a great way to see that your message is making the round trip to the cloud and back successfully.  Obviously that subscription could also be the basis for a command and control use case, where a message that is posted to the cloud could be retrieved by the gateway and the information could be acted upon.  Make sure the topic is the same as the publishing node in this case.  It will subscribe to all messages sent to that topic.
 
 ![](images/image20.png)
 
-
-- Click the Deploy button in the right corner to save the changes to the flow.
+Click the Deploy button in the right corner to save the changes to the flow.
 
 ![](images/image21.png)
 
 ![](images/image22.png)
-
-Check to the IoT Dev Hub dashboard to ensure that the chart reflects the  flow from the cloud data:
-
-![](images/image23.png)
 
 **Congratulations! You are now successfully transmitting sensor data to/from the AWS IoT Cloud**
 
