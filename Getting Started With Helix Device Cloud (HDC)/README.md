@@ -57,3 +57,18 @@ Go back to the Developer Hub interface and copy over the startup.bin file into t
 ![](images/image7.png)
 
 Now reboot your gateway and log back into your HDC console.  You should now see the gateway listed in HDC.
+
+## (Optional) Resolving the MQTT service conflict ##
+The HDC agent service uses port 1883, which by default is used by the Intel IoT Gateway for it's Mosquitto MQTT broker.  The MQTT broker is also used in the charting flow within the Developer Hub.  If you would like to continue to use the Mosquitto MQTT broker or charting in the Developer Hub after you install the HDC agent, follow these instructions:
+
+Edit the /etc/mosquitto/mosquitto.conf file and change the listener to another port (1884 for example)
+
+![](images/image8.png)
+
+![](images/image9.png)
+
+Click ctrl + s to save the changes and esc to go back to the file explorer view.
+
+Once you have changed the listener to another port, then you need to change the node-red charting flow to use the same port.  Lot into node-red from the administration tab in the Developer Hub.  Change any flows that are using MQTT such as the default charting flows to use the new port.
+
+![](images/image10.png)
