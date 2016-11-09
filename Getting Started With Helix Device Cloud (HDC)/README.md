@@ -57,5 +57,3 @@ Go back to the Developer Hub interface and copy over the startup.bin file into t
 ![](images/image7.png)
 
 Now reboot your gateway and log back into your HDC console.  You should now see the gateway listed in HDC.
-
-*indicates that third-party names might be the property of others.
