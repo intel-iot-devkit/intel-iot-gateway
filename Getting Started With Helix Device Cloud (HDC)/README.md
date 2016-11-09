@@ -16,7 +16,9 @@ Prior to configuring your gateway to connect to Helix Device Cloud, it is necess
 [http://www.windriver.com/products/helix/device-cloud/](http://www.windriver.com/products/helix/device-cloud/)
 
 ## Installing the HDC Agent ##
-Download the HDC 2.1 agent from here:
+Warning: You should have access to HDC prior to installing the HDC agent on the gateway because part of the installation is configuring the startup.bin file to point to your instance of HDC.
+
+When you have access, download the HDC 2.1 agent from here:
 [intel-iot-gateway/Getting Started With Helix Device Cloud (HDC)/hdc/](https://github.com/intel-iot-devkit/intel-iot-gateway/blob/master/Getting%20Started%20With%20Helix%20Device%20Cloud%20(HDC)/hdc/HDC21forIDP31.tgz)
 
 Connect to the Developer Hub on the IoT gateway, click on the Administration tab and Launch Cloud Commander. If you need a more in depth tutorial on how to use Cloud Commander, please refer to the that [tutorial](https://github.com/intel-iot-devkit/Intel-IoT-Gateway/tree/master/Getting Started With Cloud Commander).
