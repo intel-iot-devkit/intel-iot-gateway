@@ -47,7 +47,7 @@ rpm -ihv *.rpm
 
 The agent is now installed, however you need to configure the startup.bin file to point you your instance of HDC.  It is critical that you do this now, before you reboot so that you don’t connect to the wrong instance.
 
-Open your HDC instance from the link in the email below and go to your profile settings:
+Open your HDC instance and go to your profile settings:
 
 ![](images/image6.png)
 
