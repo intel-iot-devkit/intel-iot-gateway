@@ -51,7 +51,7 @@ Open your HDC instance and go to your profile settings:
 
 ![](images/image6.png)
 
-Download the startup.bin file to your local machine.
+Download the startup.bin file from your profile page on Helix Device Cloud and save it to your local machine.
 Go back to the Developer Hub interface and copy over the startup.bin file into the /opt/intel/ubroker/bin/ directory, overwriting what is already there if that file is already present.
 
 ![](images/image7.png)
