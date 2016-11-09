@@ -36,7 +36,9 @@ Then launch the built in command interface in cloud commander:
 ![](images/image4.png)
 
 Run the following commands:
+
 cd /root
+
 rpm -ihv *.rpm
  
 ![](images/image5.png)
