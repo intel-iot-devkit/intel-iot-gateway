@@ -12,44 +12,43 @@ When an IoT Gateway that uses Intel® IoT Gateway Technology is installed, the s
 
 ## Clearing the keys ##
 
-1.	Boot/reboot
-2.	Select boot device by pressing F12 before boot or ESC to enter BIOS (depends on HW)
-3.	Select Enter Setup (skip if ESC entered BIOS)
-4.	Select the Security Menu
-5.	Select Secure Boot Menu
-6.	Set Secure Boot to Disabled
-7.	Press F4 to save and exit
-8.	System will reboot
-9.	Select boot device by pressing F12 before boot
-10.	Select Enter Setup
-11.	Select the Security Menu
-12.	Select Secure Boot Menu
-13.	Set Secure Boot to Enabled
-a.	Accept Warning - press enter for Ok
-14.	Set Secure Boot Mode to Custom
-15.	Select Key Management
-16.	Set Default Key Provision to Disabled
-17.	Select Delete All Secure Boot Variables or for each Section (5) select Delete PK, KEK, DB, DBT, and DBX
-a.	All should say NOT INSTALLED
-18.	Press Esc
-19.	Set Secure Boot Mode to Standard
-20.	Ensure Secure Boot is set to Enabled
-21.	Press F4 to save and exit
+1.	Boot/reboot the Gateway.
+2.	Select boot device by pressing F12 before boot or ESC to enter BIOS (depends on HW).
+3.	Select Enter Setup (skip if ESC entered BIOS).
+4.	Select the Security Menu.
+5.	Select Secure Boot Menu.
+6.	Set Secure Boot to Disabled.
+7.	Press F4 to save and exit.
+8.	System will reboot.
+9.	Select boot device by pressing F12 before boot.
+10.	Select Enter Setup.
+11.	Select the Security Menu.
+12.	Select Secure Boot Menu.
+13.	Set Secure Boot to Enabled.
+a.	Accept Warning - press enter for Ok.
+14.	Set Secure Boot Mode to Custom.
+15.	Select Key Management.
+16.	Set Default Key Provision to Disabled.
+17.	Select Delete All Secure Boot Variables or for each Section (5) select Delete PK, KEK, DB, DBT, and DBX. All sections should say NOT INSTALLED.
+18.	Press Esc.
+19.	Set Secure Boot Mode to Standard.
+20.	Ensure Secure Boot is set to Enabled.
+21.	Press F4 to save and exit.
 
-(let's double check)
+Verify the changes by observing the following:
 
-1.	System will reboot
-2.	Select boot device by pressing F12 before boot
-3.	Select Enter Setup
-4.	Select the Security Menu
-5.	Select Secure Boot Menu
+1.	System will reboot.
+2.	Select boot device by pressing F12 before boot.
+3.	Select Enter Setup.
+4.	Select the Security Menu.
+5.	Select Secure Boot Menu.
 	- System Mode should say Setup
 	- Secure Boot should say Not Active
 	- Secure Boot should say Enabled
 	- Secure Boot Mode should say Standard
-6.	Press F4 to save and exit
+6.	Press F4 to save and exit.
 
-You should now be able to boot a new image
+You can now boot a new image
 
 ## References ##
 -   none
