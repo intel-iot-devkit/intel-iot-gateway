@@ -13,7 +13,7 @@ By default, your IoT Gateway that uses Intel® IoT Gateway Technology comes pre-
 
 ## Assumptions ##
 -   Intel® IoT Gateway Technology version 3.1 or above
--   You have wired network connectivity to the IoT Gateway and you know it's IP address
+-   You have wired network connectivity to the IoT Gateway and you know its IP address.
 
 ## Warning ##
 It is highly recommenced you connect the IoT Gatway to a wired network and use that connection for this process.  It is possible to make these changes via the wireless connection as long as you only save changes, but not apply them, until the last step; but if you make any mistakes or if it doesn't connect to your WiFi network for some reason, you may not longer be able to access the gateway.  If this happens, see the Restoring factory network setting section below.  
@@ -32,37 +32,37 @@ Ensure the IoT Gateway is plugged in to a wired network connection.  If the IoT 
 Once you know the IP address of the wired connection, close any instances you have to the Developer Hub, connect your client to the same network that the IoT gateway's wired connection is connected to, and reconnect to the Developer Hub by going to:
 http://wiredipaddressofthegateway
 
-After logging in, you should see a screen like this
+After logging in, you will see a screen like this
 
 ![](images/image1.png)
 
-To access the IoT Gateway Admin console, click on the Administration Icon.  You should see a screen like this:
+To access the IoT Gateway Admin console, click on the Administration Icon.  You will see a screen like this:
 
 ![](images/image2.png)
 
-Now click on the LAUNCH button under the Gear icon.  This will open another browser window or tab.  Log in with your root password.  It will look like this:
+Now click on the LAUNCH button under the Gear icon.  This will open another browser window or tab.  Log in with your root password:
 
 ![](images/image3.png)
 
-This is the admin console for the gateway.  From here you can manage and configure many gateway settings but we'll be focusing on the network section.
+This is the admin console for the gateway.  From here you can manage and configure many gateway settings but we will be focusing on the network section.
 
-1. Click on Network from the menu bar and select Interfaces
-2. To the right of the 1st Network section (currently configured as LAN and br-lan), click on Edit
-3. Click on Physical Settings
-4. Uncheck Bridge interface
-5. Click on Save (not Save & Apply)
-6. Click on Firewall Settings
-7. Select wan
-8. Click on Save (not Save & Apply)
-9. Click on Network from the menu bar and select WiFi
-10. Click on Edit
-11. Click on Mode and change it from Access Point to Client
-12. In the ESSID filed, enter the SSID of the WiFi network you want to connect the IoT Gateway to.
-13. Click on the Wireless Security Tab
-14. Set the encryption type to match the WiFi network you are connecting to
-15. Set the key for the WiFi network you are connecting to 
-16. Click on Save & Apply
-17. It will take a few moments for the new configuration to apply
+1. Click on Network from the menu bar and select Interfaces.
+2. To the right of the 1st Network section (currently configured as LAN and br-lan), click on Edit.
+3. Click on Physical Settings.
+4. Uncheck Bridge interface.
+5. Click on Save (not Save & Apply).
+6. Click on Firewall Settings.
+7. Select wan.
+8. Click on Save (not Save & Apply).
+9. Click on Network from the menu bar and select WiFi.
+10. Click on Edit.
+11. Click on Mode and change it from Access Point to Client.
+12. In the ESSID field, enter the SSID of the WiFi network you want to connect the IoT Gateway to.
+13. Click on the Wireless Security Tab.
+14. Set the encryption type to match the WiFi network you are connecting to.
+15. Set the key for the WiFi network you are connecting to. 
+16. Click on Save & Apply.
+17. It will take a few moments for the new configuration to apply.
 
 You can confirm you are now connected to your WiFi network by again issuing an ifconfig command on the IoT Gateway console.  You should see an IP address assigned to wlan0.  If not, recheck your SSID and encryption settings.
 
@@ -72,7 +72,7 @@ Using the same administrative interface you used above, click on System and Rebo
 
 Now unplug the wired Ethernet connection.
 
-After the IoT Gateway reboots, reconnect to the Developer Hub via the WLAN IP address you noted above (This assumes your client is on the same network or can route to it).
+After the IoT Gateway reboots, reconnect to the Developer Hub via the WLAN IP address you noted above (assuming your client is on the same network or can route to it).
 
 **Congratulations! You've successfully changed the IoT Gateway to WiFi Client mode and connected to your network.**
 
@@ -81,17 +81,17 @@ After the IoT Gateway reboots, reconnect to the Developer Hub via the WLAN IP ad
 Connect to the Developer Hub by going to:
 http://wirelessipaddressofthegateway  
 
-Click on the Administration icon
+Click the Administration icon.
 
-Now click on the LAUNCH button under the Gear icon.  This will open another browser window or tab.  Log in with your root password.  
+Then click the LAUNCH button under the Gear icon.  This will open another browser window or tab.  Log in with your root password.  
 
 This is the admin console for the gateway.  From here you can manage and configure many gateway settings but we'll be focusing on the network section.
 
 1. Click on Network from the menu bar and select Interfaces
 2. To the right of the 2nd Network section (currently configured as WAN and eth0), click on Edit
-6. Click on Firewall Settings
-7. Select lan
-8. Click on Save & Apply
+3. Click on Firewall Settings
+4. Select lan
+5. Click on Save & Apply
 
 If you plug a wired connection to Eth0, you sound now be able to reach the IoT Gateway via the address assigned to that connection. You can use the ifconfig command mentioned above to obtain the IP address.  If you wan to set a static IP address, please refer to the next section.
 
@@ -100,7 +100,7 @@ If you plug a wired connection to Eth0, you sound now be able to reach the IoT G
 Connect to the Developer Hub by going to:
 http://wirelessipaddressofthegateway  
 
-Click on the Administration icon
+Click the Administration icon
 
 Now click on the LAUNCH button under the Gear icon.  This will open another browser window or tab.  Log in with your root password.  
 
