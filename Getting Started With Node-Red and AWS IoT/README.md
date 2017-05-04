@@ -96,18 +96,18 @@ Hit escape to exit the command view and go back to the file explorer view.  Open
 
 ![](images/image11.png)
 
-Once the files are copied, you need to rename them to match the format needed by the AWS IoT Node Red node.  The node expects the files to be named as follows:
+Once the files are copied, you need to rename them to match the format needed by the AWS IoT Node Red node. The node expects the files to be named as follows (in fact, it should align with the latest AWS IoT generated certificate. No changes should be required if you freshly generate it from latest AWS IoT service):
 
     /root/.awscerts/
-                    |--YourUniqueClientIdentifier-private.pem.key
-                    |--YourUniqueClientIdentifier-certificate.pem.crt
+                    |--YourUniqueClientIdentifier.private.key
+                    |--YourUniqueClientIdentifier.cert.pem
                     |--root-CA.crt (downloaded earlier)
                     
 Where YourUniqueClientIdentifier is the AWS thing name what you put when creating your thing.  You can refer to the other tab that you have open.  For example: If Intel_IoT_Gateway was the name of your AWS IoT Thing you created, then your folder would look like this:
 
 ![](images/image12.png)
 
-You can ignore the *-public.pem.key file.
+You can ignore the *.public.key file.
 
 # Connecting a Sensor ##
 
