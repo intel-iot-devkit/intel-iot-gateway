@@ -82,7 +82,8 @@ This will bring up a console where you can copy and paste the following commands
 
 Once this is done, your screen should look like the following:
 
-![](images/image10.png)
+![](images/image10.1.png)
+![](images/image10.2.png)
 
 Now restart Node-Red by issuing the following commands:
 
